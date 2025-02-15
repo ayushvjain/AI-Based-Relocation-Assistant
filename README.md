@@ -1,2 +1,1 @@
-# AI-Based-Population-Urban-Planning
-
+# AI-Based-Relocation-Assistant
