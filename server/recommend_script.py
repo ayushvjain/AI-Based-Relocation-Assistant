@@ -15,7 +15,6 @@ def scale(data, input):
 
 def recommend(data, location, rent, violent, overall, bed, bath, transitDistance, scaling_factors = [1, 1, 1]):
     rentFactor, distanceFactor, safetyFactor = scaling_factors
-    safetyFactor = 3
     rentScale = 2 / rentFactor
     distanceScale = 2 / distanceFactor
 
