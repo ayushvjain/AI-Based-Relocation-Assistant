@@ -34,6 +34,7 @@ const Services: React.FC = () => {
   const [showChatbot, setShowChatbot] = useState<boolean>(false);
   const chatbotRef = useRef<FloatingChatbotHandle>(null);
   const navigate = useNavigate();
+  const [parallaxOffset, setParallaxOffset] = useState<number>(0);
 
   const fetchData = async (pageNumber: number) => {
     setLoading(true);
@@ -50,6 +51,16 @@ const Services: React.FC = () => {
       setTimeout(() => setShowData(true), 200); // Small delay for smoother fade-in
     }
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Multiply window.scrollY by a factor <1 for a slower effect
+      setParallaxOffset(window.scrollY * 0.25);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     fetchData(page);
@@ -80,35 +91,31 @@ const Services: React.FC = () => {
           chatbotRef.current?.openChatWindow();
         }}
       />
+      {/* Cover Section with Parallax Effect */}
       <div
         style={{
           width: "100%",
-          height: "auto",
+          height: "98vh",
           position: "relative",
           overflow: "hidden",
+          backgroundImage: `url(${coverImage})`,
+          backgroundAttachment: "fixed",
+          backgroundPosition: `center ${-parallaxOffset}px`,
+          backgroundSize: "cover",
+          transition: "background-position 0.1s ease-out",
         }}
       >
-        <img
-          src={coverImage} // Replace with your image URL
-          alt="Cover"
-          style={{
-            width: "100%",
-            height: "60%",
-            objectFit: "cover",
-            display: "block",
-          }}
-        />
         <div
           style={{
             position: "absolute",
-            top: "30%",
+            top: "36%",
             left: "50%",
             transform: "translate(-50%, -50%)",
             color: "black",
-            fontSize: "4rem", // Adjust size of the text
-            fontFamily: "Gilda Display", // Change font family
+            fontSize: "4rem",
             fontWeight: "600",
             textAlign: "center",
+            textShadow: "0 2px 4px rgba(0,0,0,0.5)",
           }}
         >
           Rent Robo
@@ -116,18 +123,18 @@ const Services: React.FC = () => {
         <div
           style={{
             position: "absolute",
-            top: "30.5%", // Positioned below the main text
+            top: "41%",
             left: "50%",
-            transform: "translateX(-50%)",
+            transform: "translate(-50%, -50%)",
             color: "black",
-            fontSize: "1.5rem", // Adjust font size
+            fontSize: "1.5rem",
             fontWeight: "normal",
-            fontFamily: "Roboto", // Change font family
             textAlign: "center",
-            marginTop: "20px", // Add some spacing between the texts
+            marginTop: "20px",
+            textShadow: "0 1px 3px rgba(0,0,0,0.3)",
           }}
         >
-          Making Moving Simpler
+          Finding Affordable Housing Made Simple
         </div>
       </div>
       <Container sx={{ py: 6, maxWidth: "90%", pl: 0 }}>
@@ -155,7 +162,7 @@ const Services: React.FC = () => {
               style={{
                 width: "60%",
                 height: "auto",
-                borderRadius: "10px", // Optional: for rounded corners
+                borderRadius: "10px",
               }}
             />
           </Grid>
@@ -164,7 +171,14 @@ const Services: React.FC = () => {
           <Grid item xs={12} md={6}>
             <Typography
               variant="body1"
-              sx={{ fontSize: "1.2rem", lineHeight: "1.8", mt: 5, mr: 6 }}
+              sx={{
+                fontSize: "1.2rem",
+                margin: "0px !important",
+                textAlign: "justify",
+                lineHeight: "1.8",
+                mt: 5,
+                mr: 6,
+              }}
             >
               At Rent Robo, we simplify the moving experience by providing a
               seamless platform to find rental properties suited to your needs.
@@ -177,12 +191,7 @@ const Services: React.FC = () => {
           </Grid>
         </Grid>
       </Container>
-      <Container
-        sx={{ py: 6, textAlign: "start", maxWidth: "100vw !important" }}
-      >
-        {/* <Typography variant="h2" sx={{ fontWeight: "bold", mb: 4 }}>
-          Featured Property Listings
-        </Typography> */}
+      <Container sx={{ textAlign: "start", maxWidth: "100vw !important" }}>
         <Grid container spacing={4}>
           {loading
             ? [...Array(9)].map((_, index) => (
@@ -236,33 +245,12 @@ const Services: React.FC = () => {
                 </Fade>
               ))}
         </Grid>
-        <Stack
-          spacing={2}
-          sx={{ mt: 4, display: "flex", alignItems: "center" }}
-        ></Stack>
+        <Stack spacing={2} sx={{ mt: 4, display: "flex", alignItems: "center" }}></Stack>
       </Container>
       <Footer />
       <FloatingChatbot ref={chatbotRef} onChatComplete={handleChatComplete} />
     </React.Fragment>
   );
-};
-
-const FloatingChatbotWrapper: React.FC<{
-  showChatbot: boolean;
-  onChatComplete: (data: FinalChatOutput) => void;
-}> = ({ showChatbot, onChatComplete }) => {
-  // The chatbot code from above expects to manage its own state: `isChatOpen`.
-  // We'll override that logic by hooking into the "showChatbot" prop.
-  // So we can do something like:
-  const [forceOpen, setForceOpen] = useState<boolean>(showChatbot);
-
-  // If the parent toggles "showChatbot", we update "forceOpen"
-  React.useEffect(() => {
-    setForceOpen(showChatbot);
-  }, [showChatbot]);
-
-  // We'll define a custom component that extends the original Chatbot
-  return <FloatingChatbot onChatComplete={onChatComplete} />;
 };
 
 export default Services;
