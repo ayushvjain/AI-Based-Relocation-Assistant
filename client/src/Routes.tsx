@@ -20,7 +20,7 @@ import CustomerHome from "./pages/customers/landing.tsx";
 // import ShareBookingHistory from "./pages/customers/shareBookingHistory.tsx";
 
 
-import BookingHistory from "./pages/customers/bookinghistory.tsx";
+// import BookingHistory from "./pages/customers/bookinghistory.tsx";
 function AppRouter(): JSX.Element {
   const location = useLocation();
   const pathname = location.pathname;
