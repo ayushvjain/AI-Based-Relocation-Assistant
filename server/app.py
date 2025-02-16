@@ -88,11 +88,11 @@ def get_recommendations():
         safety_pref = preference_of_future_house.get("Safety", 1)
 
         transit_data = get_transit_data(current_living_conditions[0], location)
+        transit_distance = transit_data['transit_distance']
 
         # Dummy values for crime and transit (modify if needed)
         violent_crime = 0.3
         overall_crime = 2.0
-        transit_distance = transit_data['transit_distance']
 
         # Call recommendation function
         recommendations = recommend(
