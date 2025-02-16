@@ -57,6 +57,8 @@ def scale(data, input_value):
 
 def recommend(data, location, rent, violent, overall, bed, bath, transit_distance, scaling_factors=[1, 1, 1]):
     rentScale, distanceScale, safetyScale = scaling_factors
+    rentScale *= (4 - rentScale)
+    distanceScale *= (4 - distanceScale)
 
     data_rent = data['Rent']
     rooms = data['Bed'] + data['Bath'] * 0.5
@@ -100,15 +102,14 @@ def recommend(data, location, rent, violent, overall, bed, bath, transit_distanc
 
     apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff)))
 
-    if False:
-        # Case where safety is first priority
-        # apartment_vectors = np.array(list(zip(scaledDataTransit, scaledDataRent, dataTradeoff, dataScaledCrime)))
+    if safetyScale == 1:
+        apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff, dataScaledCrime)))
+        input_vector = np.array([scaled_data_transit, scaled_data_rent, data_tradeoff, 0])
 
-        # Case where rent is second priority
-        dataScaledCrime = [0 if val <= 1 else val for val in dataScaledCrime]
-        apartment_vectors = np.array(list(zip(scaledDataTransit, scaledDataRent, dataTradeoff, dataScaledCrime)))
+    elif safetyScale == 2:
+        apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff, dataScaledCrime)))
+        input_vector = np.array([scaled_data_transit, scaled_data_rent, data_tradeoff, 1])
         
-        input = np.array([scaledTransit, scaledRent, tradeoff, 1])
 
     similarities = []
 
