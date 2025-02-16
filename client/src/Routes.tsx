@@ -16,6 +16,7 @@ import NotFound from "./pages/pageNotFound/index.tsx";
 // import SuccessPage from "./pages/customers/payment-success.tsx";
 // import FailurePage from "./pages/customers/payment-failure.tsx";
 import CustomerHome from "./pages/customers/landing.tsx";
+import Recommendation from "./pages/customers/recommendation.tsx";
 // import ShareDetails from "./pages/customers/shareDetails.tsx";
 // import ShareBookingHistory from "./pages/customers/shareBookingHistory.tsx";
 
@@ -55,6 +56,7 @@ function AppRouter(): JSX.Element {
       {/* <Route path={urls.LOGIN} element={<Login />} /> */}
       {/* <Route path={urls.LANDING} element={<Navigate to={urls.LOGIN} replace />} /> */}
       <Route path={urls.LANDING} element={<CustomerHome />} />
+      <Route path={urls.RECOMMENDATION} element={<Recommendation />} />
       {/* <Route path={urls.SERVICES} element={<Services />} />
       <Route path={urls.SERVICES_PROVIDERS} element={<ServicesProviders />} />
       <Route path={urls.SERVICE_PROVIDER_DASHBOARD} element={<ServiceProviderHome />} />
