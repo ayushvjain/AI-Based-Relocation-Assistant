@@ -411,25 +411,27 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
         {/* Floating Icon: shown when chat modal is NOT open and conversation not complete */}
         {!isChatOpen && !conversationComplete && (
           <motion.div
-            style={{ position: 'fixed', bottom: 20, right: 20, zIndex: 1000 }}
-            variants={bounceVariants}
-            animate={iconHovered ? 'still' : 'bounce'}
-            onHoverStart={() => setIconHovered(true)}
-            onHoverEnd={() => setIconHovered(false)}
-            onClick={openChat}
-          >
-            <div
+          style={{ position: 'fixed', bottom: 20, right: 20, zIndex: 1000, cursor: 'pointer' }}
+          onClick={openChat}
+          onHoverStart={() => setIconHovered(true)}
+          onHoverEnd={() => setIconHovered(false)}
+        >
+          {/* Container for the bot and its shadow */}
+          <div style={{ position: 'relative', width: 80, height: 80 }}>
+            {/* Floating Bot Avatar */}
+            <motion.div
+              variants={{
+                bounce: { y: [0, -5, 0], transition: { duration: 1, repeat: Infinity } },
+                still: { y: 0 },
+              }}
+              animate={iconHovered ? 'still' : 'bounce'}
               style={{
                 width: 80,
                 height: 80,
-                borderRadius: '50%',
+                // borderRadius: '50%',
+                overflow: 'hidden',
+                // border: '1.5px solid #09295c',
                 background: '#007bff',
-                border: '1.5px solid',
-                borderColor: '#09295c',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
               }}
             >
               <img
@@ -437,8 +439,34 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
                 alt="RentRobo Avatar"
                 style={{ width: '100%', height: '100%', borderRadius: '50%' }}
               />
-            </div>
-          </motion.div>
+            </motion.div>
+            {/* Shadow beneath the avatar */}
+            <motion.div
+              variants={{
+                bounce: {
+                  // When the bot bounces upward, the shadow shrinks and becomes lighter.
+                  scale: [1, 0.8, 1],
+                  opacity: [0.5, 0.3, 0.5],
+                  transition: { duration: 1, repeat: Infinity },
+                },
+                still: { scale: 1, opacity: 0.5 },
+              }}
+              animate={iconHovered ? 'still' : 'bounce'}
+              style={{
+                position: 'absolute',
+                bottom: -10,
+                left: '19%',
+                transform: 'translateX(-50%)',
+                width: 50,
+                height: 16,
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                borderRadius: '100%',
+                filter: 'blur(2px)',
+              }}
+            />
+          </div>
+        </motion.div>
+        
         )}
 
         {/* Chat Modal */}
@@ -458,7 +486,6 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
                 maxHeight: '70vh',
                 background: '#fff',
                 borderRadius: 8,
-                boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
                 display: 'flex',
                 flexDirection: 'column',
                 overflow: 'hidden',
