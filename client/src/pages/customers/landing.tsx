@@ -180,9 +180,9 @@ const Services: React.FC = () => {
       <Container
         sx={{ py: 6, textAlign: "start", maxWidth: "100vw !important" }}
       >
-        <Typography variant="h2" sx={{ fontWeight: "bold", mb: 4 }}>
+        {/* <Typography variant="h2" sx={{ fontWeight: "bold", mb: 4 }}>
           Featured Property Listings
-        </Typography>
+        </Typography> */}
         <Grid container spacing={4}>
           {loading
             ? [...Array(9)].map((_, index) => (

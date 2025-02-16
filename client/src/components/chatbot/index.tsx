@@ -7,6 +7,7 @@ import React, {
   useImperativeHandle,
 } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Aibot from '../../assets/AI_bot.avif';
 
 // ----- Typing Indicator Styles & Component -----
 const typingIndicatorContainer: React.CSSProperties = {
@@ -39,7 +40,7 @@ const TypingIndicator: React.FC = () => (
   </div>
 );
 
-// Inject keyframes (or add them in a CSS file)
+// Inject keyframes (or add these in a CSS file)
 const bounceKeyframes = `
 @keyframes dotsBounce {
   0%, 80%, 100% { transform: scale(0); }
@@ -56,7 +57,7 @@ export interface ChatData {
   bath: number;
   preferredNeighbourhood: string;
   surveyResults: {
-    Rent: number | null;
+    "Lower Rent": number | null;
     "Neighbourhood preference": number | null;
     "Commute convenience": number | null;
   };
@@ -120,11 +121,21 @@ const initialChatData = {
   bathCount: '',
   preferredNeighbourhood: '',
   surveyResults: {
-    Rent: null,
+    "Lower Rent": null,
     "Neighbourhood preference": null,
     "Commute convenience": null,
   },
 };
+
+// Final output interface (for recommendation data)
+export interface FinalChatOutput {
+  current_living_conditions: [string, string, number, number, number];
+  preference_of_future_house: {
+    Rent: number | null;
+    Location: number | null;
+    Safety: number | null;
+  };
+}
 
 const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
   ({ onChatComplete }, ref) => {
@@ -268,7 +279,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
       setChatData((prev) => ({
         ...prev,
         surveyResults: {
-          Rent: null,
+          "Lower Rent": null,
           'Neighbourhood preference': null,
           'Commute convenience': null,
         },
@@ -278,8 +289,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
     const handleSurveySubmit = () => {
       const allSelected = Object.values(chatData.surveyResults).every((v) => v !== null);
       if (!allSelected) return;
-    
-      // Convert the values to numbers and repackage the data into the expected schema:
+
       const finalOutput: FinalChatOutput = {
         current_living_conditions: [
           chatData.location,                           // Address (current location)
@@ -289,15 +299,14 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
           convertBathCount(chatData.bathCount)         // Bath count as number
         ],
         preference_of_future_house: {
-          "Rent": chatData.surveyResults.Rent,
+          Rent: chatData.surveyResults["Lower Rent"],
           // "Commute convenience" is renamed to "Location"
-          "Location": chatData.surveyResults["Commute convenience"],
+          Location: chatData.surveyResults["Commute convenience"],
           // "Neighbourhood preference" is renamed to "Safety"
-          "Safety": chatData.surveyResults["Neighbourhood preference"]
+          Safety: chatData.surveyResults["Neighbourhood preference"]
         }
       };
-    
-      // Close the chat and mark conversation as complete
+
       setTimeout(() => {
         setIsChatOpen(false);
         setConversationComplete(true);
@@ -320,6 +329,80 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
       setIsChatOpen(false);
     };
 
+    // Render bot messages with an avatar
+    const renderMessage = (msg: Message, index: number) => {
+      if (msg.sender === 'bot') {
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              margin: '5px 0',
+              display: 'flex',
+              alignItems: 'flex-start',
+            }}
+          >
+            {/* Bot Avatar */}
+            <div
+              style={{
+                width: 36,
+                height: 36,
+                borderRadius: '50%',
+                background: '#007bff',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: '#fff',
+                fontWeight: 'bold',
+                marginRight: 8,
+              }}
+            >
+              R
+            </div>
+            <div
+              style={{
+                padding: '8px 12px',
+                borderRadius: 16,
+                background: '#f1f0f0',
+                color: '#000',
+                maxWidth: '75%',
+              }}
+            >
+              {msg.text}
+            </div>
+          </motion.div>
+        );
+      } else {
+        return (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5 }}
+            style={{
+              margin: '5px 0',
+              textAlign: 'right',
+            }}
+          >
+            <div
+              style={{
+                display: 'inline-block',
+                padding: '8px 12px',
+                borderRadius: 16,
+                background: '#007bff',
+                color: '#fff',
+                maxWidth: '75%',
+              }}
+            >
+              {msg.text}
+            </div>
+          </motion.div>
+        );
+      }
+    };
+
     return (
       <>
         {/* Inject keyframes */}
@@ -337,17 +420,23 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
           >
             <div
               style={{
-                width: 50,
-                height: 50,
+                width: 80,
+                height: 80,
                 borderRadius: '50%',
                 background: '#007bff',
+                border: '1.5px solid',
+                borderColor: '#09295c',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 cursor: 'pointer',
               }}
             >
-              <span style={{ color: 'white', fontSize: 24 }}>💬</span>
+              <img
+                src={Aibot}
+                alt="RentRobo Avatar"
+                style={{ width: '100%', height: '100%', borderRadius: '50%' }}
+              />
             </div>
           </motion.div>
         )}
@@ -385,10 +474,10 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
                     height: 36,
                     borderRadius: '50%',
                     border: 'none',
-                    background: '#f0f0f0',
+                    background: '#d0d0d0',
                     cursor: 'pointer',
                     marginRight: 6,
-                    fontSize: 18,
+                    fontSize: 20,
                   }}
                   title="Minimize"
                 >
@@ -401,9 +490,9 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
                     height: 36,
                     borderRadius: '50%',
                     border: 'none',
-                    background: '#f0f0f0',
+                    background: '#d0d0d0',
                     cursor: 'pointer',
-                    fontSize: 18,
+                    fontSize: 20,
                   }}
                   title="Close"
                 >
@@ -413,30 +502,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
 
               {/* Message Container */}
               <div style={{ flex: 1, padding: 10, overflowY: 'auto' }}>
-                {messages.map((msg, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    style={{
-                      margin: '5px 0',
-                      textAlign: msg.sender === 'bot' ? 'left' : 'right',
-                    }}
-                  >
-                    <div
-                      style={{
-                        display: 'inline-block',
-                        padding: '8px 12px',
-                        borderRadius: 16,
-                        background: msg.sender === 'bot' ? '#f1f0f0' : '#007bff',
-                        color: msg.sender === 'bot' ? '#000' : '#fff',
-                      }}
-                    >
-                      {msg.text}
-                    </div>
-                  </motion.div>
-                ))}
+                {messages.map((msg, index) => renderMessage(msg, index))}
                 <div ref={messagesEndRef} />
                 {messages.length === 0 && (
                   <Typewriter
@@ -623,7 +689,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
                       style={{
                         padding: '8px 12px',
                         border: '1px solid #007bff',
-                        background: '#f0f0f0',
+                        background: '#e8e8e8',
                         cursor: 'pointer',
                         borderRadius: '4px',
                       }}
@@ -658,12 +724,3 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
 );
 
 export default FloatingChatbot;
-
-export interface FinalChatOutput {
-  current_living_conditions: [string, string, number, number, number];
-  preference_of_future_house: {
-    Rent: number | null;
-    Location: number | null;
-    Safety: number | null;
-  };
-}

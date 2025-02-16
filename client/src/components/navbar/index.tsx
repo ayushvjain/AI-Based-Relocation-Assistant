@@ -61,9 +61,7 @@ function ResponsiveAppBar({ onHelpClick }: ResponsiveAppBarProps) {
   const role = sessionStorage.getItem('role') || '';
 
   const pages = [
-    { name: t('Services'), route: routes.SERVICES },
-    { name: t('Bookings'), route: routes.BOOKING_HISTORY },
-    { name: t('Profile'), route: routes.PROFILE },
+    { name: t('Home'), route: routes.LANDING },
   ];
 
   const userInitials = `${firstname[0] || ''}${lastname[0] || ''}`.toUpperCase();
@@ -161,6 +159,9 @@ function ResponsiveAppBar({ onHelpClick }: ResponsiveAppBarProps) {
             </Menu>
           </Box>
           {/* Fullscreen Toggle */}
+          <Button color="inherit" sx={{ marginRight: '40px' }} onClick={() => navigate(routes.LANDING)}>
+            Home
+          </Button>
           <Tooltip title={isFullscreen ? "Restore Down" : "Maximize"} placement="bottom">
             <IconButton sx={{ padding: 0 }} color="inherit" onClick={toggleFullscreen}>
               {isFullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
