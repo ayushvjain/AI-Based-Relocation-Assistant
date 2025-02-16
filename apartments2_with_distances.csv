@@ -1,4 +1,4 @@
-Area Name,Address,Rent,Violent CrimeRate,Overall CrimeRate,Bed,Bath,Northeastern University_transit_distance,Northeastern University_transit_cost,Northeastern University_driving_distance,Boston University_transit_distance,Boston University_transit_cost,Boston University_driving_distance,Boston College_transit_distance,Boston College_transit_cost,Boston College_driving_distance
+Area Name,Address,Rent,Violent CrimeRate,Overall CrimeRate,Bed,Bath,Northeastern University_transit,Northeastern University_transit_cost,Northeastern University_driving,Boston University_transit_distance,Boston University_transit_cost,Boston University_driving_distance,Boston College_transit_distance,Boston College_transit_cost,Boston College_driving_distance
 Dorchester,"84 Greenwood,Unit 3L,Boston,MA,02121,Dorchester",1450,0,0,1,1,5725,1.7,5319,9125,3.4,7423,13278,5.8,11416
 Dorchester,"83 Dix St.,Unit 4,Boston,MA,02122,Dorchester",1450,0,0,1,1,11877,4.1,8259,11600,3.4,14472,18369,2.4,13757
 Brighton,"42 Brooks St.,Unit Commercial,Boston,MA,02135,Brighton",1500,0,0,1,1,11474,3.4,9411,4530,3.4,7917,2171,0,2964
@@ -1157,7 +1157,7 @@ Brighton,"61 Selkirk Rd.,Unit 5,Boston,MA,02115,Brighton",3020,0,0,2,1,6716,2.4,
 Allston,"75 Braintree st.,Unit 311,Boston,MA,02134,Allston",3020,0,0,1,1,6373,1.7,5521,1928,1.7,1731,4346,2.4,3825
 Allston,"75 Braintree st.,Unit 323,Boston,MA,02134,Allston",3020,0,0,1,1,6373,1.7,5521,1928,1.7,1731,4346,2.4,3825
 Allston,"75 Braintree st.,Unit 314,Boston,MA,02134,Allston",3020,0,0,1,1,6373,1.7,5521,1928,1.7,1731,4346,2.4,3825
-Charlestown,"250 1st Ave.,Unit 1-0232,Boston,MA,02129,Charlestown",3020,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0232,Boston,MA,02129,Charlestown",3020,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Brighton,"67 Chiswick Rd.,Unit 7,Boston,MA,02134,Brighton",3020,0,0,2,1,6678,2.4,5803,3458,2.4,3517,1776,2.4,1568
 Brighton,"125 Guest St.,Unit 528,Boston,MA,02135,Brighton",3020,0,0,1,1,7725,3.4,8760,2523,1.7,2369,4289,4.1,3390
 North Cambridge,"160 Cambridgepark Dr.,Unit 138,Cambridge,MA,02140,North Cambridge",3020,0,0,1,1,18078,0,10073,21507,0,8579,20350,2.4,10455
@@ -1356,7 +1356,7 @@ Porter Square,"32 Cogswell Ave.,Unit 2,Cambridge,MA,02140,Porter Square",3200,0,
 Charlestown,"2 Monument Sq.,Unit 1,Boston,MA,02129,Charlestown",3200,0,0,2,1,6010,4.1,6793,8246,4.1,6277,12941,4.1,16953
 Jamaica Plain,"250 Centre St.,Unit 308,Boston,MA,02119,Jamaica Plain",3200,0,0,1,1,2672,1.7,1990,6072,3.4,4920,9836,5.8,7330
 Roxbury,"150 Camden St.,Unit 150 - 506,Boston,MA,02118,Roxbury",3200,0,0,1,1,134,0,618,4425,4.1,2194,9119,4.1,8737
-Charlestown,"250 1st Ave.,Unit 1-0432,Boston,MA,02129,Charlestown",3209,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0432,Boston,MA,02129,Charlestown",3209,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Allston,"65 Brainerd Rd.,Unit 75-211,Boston,MA,02134,Allston",3214,0,0,1,1,4787,2.4,4285,1567,2.4,1599,4357,2.4,4194
 Mission Hill,"75 Saint Alphonsus St.,Unit 116,Boston,MA,02120,Mission Hill",3214,0,0,2,1,902,2.4,966,5700,3.4,2297,8104,4.1,6937
 North Cambridge,"30 Cambridge Park Dr.,Unit 3115,Cambridge,MA,02140,North Cambridge",3214,0,0,1,1,17808,0,9803,21237,0,8309,20080,2.4,10185
@@ -1366,7 +1366,7 @@ Brighton,"9 Bronsdon St.,Unit 38S-E_14289,Boston,MA,02135,Brighton",3215,0,0,2,1
 Brighton,"9 Bronsdon St.,Unit 3B-D_14294,Boston,MA,02135,Brighton",3215,0,0,2,1,7795,3.4,6424,3179,1.7,3503,4691,1.7,3527
 Allston,"65 Brainerd Rd.,Unit 65-301,Boston,MA,02134,Allston",3219,0,0,1,1,4787,2.4,4285,1567,2.4,1599,4357,2.4,4194
 Back Bay,"464 Beacon,Unit 2F,Boston,MA,02115,Back Bay",3220,0,0,1,1,1636,1.7,1333,814,0,814,8141,2.4,11781
-Charlestown,"250 1st Ave.,Unit 1-0527,Boston,MA,02129,Charlestown",3224,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0527,Boston,MA,02129,Charlestown",3224,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Brighton,"1925 Commonwealth,Unit 1116,Boston,MA,02135,Brighton",3225,0,0,1,1,7055,2.4,11692,3835,2.4,3928,1575,2.4,995
 Brighton,"1925 Commonwealth,Unit 1219,Boston,MA,02135,Brighton",3225,0,0,1,1,7055,2.4,11692,3835,2.4,3928,1575,2.4,995
 Mission Hill,"75 Saint Alphonsus St.,Unit 215,Boston,MA,02120,Mission Hill",3229,0,0,2,1,902,2.4,966,5700,3.4,2297,8104,4.1,6937
@@ -1617,7 +1617,7 @@ Kendall Square,"33 Rogers St.,Unit 508,Cambridge,MA,02142,Kendall Square",3430,0
 North Cambridge,"160 Cambridgepark Dr.,Unit 403,Cambridge,MA,02140,North Cambridge",3430,0,0,1,1,13752,2.4,10073,15655,2.4,8579,20350,2.4,10455
 Financial District,"1 India St.,Unit 11B,Boston,MA,02109,Financial District",3435,0,0,1,1,4460,2.4,5296,6376,2.4,4698,11071,2.4,16703
 Jamaica Plain,"161 South Hungtinton Ave.,Unit 330,Boston,MA,02130,Jamaica Plain",3435,0,0,1,1,2509,2.4,2548,8377,4.1,3293,14011,2.4,6493
-Charlestown,"250 1st Ave.,Unit 1-0216,Boston,MA,02129,Charlestown",3438,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0216,Boston,MA,02129,Charlestown",3438,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Mission Hill,"75 Saint Alphonsus St.,Unit 512,Boston,MA,02120,Mission Hill",3439,0,0,2,1,902,2.4,966,5314,4.1,2297,12405,2.4,6937
 Mission Hill,"75 Saint Alphonsus St.,Unit 409,Boston,MA,02120,Mission Hill",3439,0,0,2,1,902,2.4,966,5314,4.1,2297,12405,2.4,6937
 Dorchester,"24 Oyster Bay Rd.,Unit 260107,Boston,MA,02125,Dorchester",3440,0,0,1,1,8278,1.7,5542,11028,3.4,11755,18341,4.1,20260
@@ -1801,7 +1801,7 @@ Dorchester,"24 Oyster Bay Rd.,Unit 260506,Boston,MA,02125,Dorchester",3550,0,0,2
 Jamaica Plain,"201 South Huntington Ave.,Unit 201-414,Boston,MA,02130,Jamaica Plain",3550,0,0,1,1,2640,2.4,2611,5333,3.4,3356,13113,4.1,6556
 Jamaica Plain,"201 South Huntington Ave.,Unit 201-618,Boston,MA,02130,Jamaica Plain",3550,0,0,1,1,2640,2.4,2611,5333,3.4,3356,13113,4.1,6556
 Allston,"65 Brainerd Rd.,Unit 65-205,Boston,MA,02134,Allston",3551,0,0,1,1,4787,2.4,4285,1567,2.4,1599,4357,2.4,4194
-Charlestown,"250 1st Ave.,Unit 1-0707,Boston,MA,02129,Charlestown",3553,0,0,2,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0707,Boston,MA,02129,Charlestown",3553,0,0,2,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Allston,"1185 Commonwealth Ave.,Unit 1,Boston,MA,02134,Allston",3555,0,0,3,1,6321,3.4,5776,1225,2.4,1115,4015,2.4,3885
 Brighton,"175 Washington St.,Unit 3351,Boston,MA,02135,Brighton",3562,0,0,1,1,7860,3.4,5395,3031,2.4,3110,3036,2.4,2797
 Dorchester,"24 Oyster Bay Rd.,Unit 160411,Boston,MA,02125,Dorchester",3565,0,0,1,1,8278,1.7,5542,11028,3.4,11755,18341,4.1,20260
@@ -1962,7 +1962,7 @@ Dorchester,"24 Oyster Bay Rd.,Unit 330115,Boston,MA,02125,Dorchester",3655,0,0,2
 Dorchester,"401 Mount Vernon St.,Unit 401-728,Boston,MA,02125,Dorchester",3658,0,0,2,2,8215,1.7,6082,11214,3.4,12295,18527,4.1,20800
 East Boston,"126 Border St.,Unit 302,Boston,MA,02128,East Boston",3662,0,0,2,2,6788,2.4,7861,8704,2.4,7345,13399,2.4,18021
 Chinatown,"120 Kingston St.,Unit 2211,Boston,MA,02111,Chinatown",3666,0,0,1,1,3607,2.4,4407,6882,4.1,6802,10221,2.4,15821
-Charlestown,"250 1st Ave.,Unit 1-0312,Boston,MA,02129,Charlestown",3667,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0312,Boston,MA,02129,Charlestown",3667,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Midtown,"45 Stuart St.,Unit 1808,Boston,MA,02116,Midtown",3670,0,0,1,1,3302,2.4,2728,6979,4.1,3471,9916,2.4,14852
 Dorchester,"24 Oyster Bay Rd.,Unit 70115,Boston,MA,02125,Dorchester",3670,0,0,2,1,8278,1.7,5542,11028,3.4,11755,18341,4.1,20260
 North End,"110 Beverly St.,Unit 1111,Boston,MA,02114,North End",3670,0,0,1,1,4869,2.4,6099,6794,2.4,4542,11489,2.4,17518
@@ -2079,7 +2079,7 @@ Chinatown,"660 Washington St.,Unit 24H,Boston,MA,02116,Chinatown",3790,0,0,1,1,3
 East Boston,"126 Border St.,Unit 127,Boston,MA,02128,East Boston",3791,0,0,2,2,6788,2.4,7861,8704,2.4,7345,13399,2.4,18021
 North End,"101 Canal St.,Unit 809,Boston,MA,02114,North End",3795,0,0,2,2,4849,2.4,6385,6774,2.4,4696,11477,2.4,17804
 Allston,"1185 Commonwealth Ave.,Unit 3,Boston,MA,02134,Allston",3795,0,0,3,2,4445,2.4,5776,1225,2.4,1115,4015,2.4,3885
-Charlestown,"250 1st Ave.,Unit 1-0421,Boston,MA,02129,Charlestown",3797,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0421,Boston,MA,02129,Charlestown",3797,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Chinatown,"120 Kingston St.,Unit 2203,Boston,MA,02111,Chinatown",3797,0,0,1,1,4424,2.4,4407,8577,3.4,6802,10221,2.4,15821
 Chinatown,"120 Kingston St.,Unit 1107,Boston,MA,02111,Chinatown",3798,0,0,1,1,4424,2.4,4407,8577,3.4,6802,10221,2.4,15821
 Mission Hill,"71 South Huntington Ave.,Unit 1,Boston,MA,02130,Mission Hill",3800,0,0,3,1,2230,2.4,2031,4985,3.4,2776,13732,2.4,5976
@@ -2198,7 +2198,7 @@ Fenway,"180 Brookline Ave.,Unit 539,Boston,MA,02215,Fenway",3901,0,0,1,1,2573,1.
 Allston,"75 Braintree St.,Unit 502,Boston,MA,02134,Allston",3905,0,0,2,1,6551,3.4,5521,1928,1.7,1731,4814,2.4,3825
 Chinatown,"660 Washington St.,Unit 22H,Boston,MA,02116,Chinatown",3910,0,0,1,1,3376,2.4,4495,6845,4.1,6890,9990,2.4,15909
 Chinatown,"120 Kingston St.,Unit 2308,Boston,MA,02111,Chinatown",3913,0,0,1,1,4424,2.4,4407,7076,4.1,6802,10221,2.4,15821
-Charlestown,"250 1st Ave.,Unit 1-0330,Boston,MA,02129,Charlestown",3917,0,0,1,1,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0330,Boston,MA,02129,Charlestown",3917,0,0,1,1,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Brighton,"1550 Soldiers Field Rd.,Unit 201,Boston,MA,02135,Brighton",3920,0,0,2,2,9893,3.4,8280,6661,3.4,6786,5028,4.1,3708
 Fenway,"1377 Boylston St.,Unit 614,Boston,MA,03125,Fenway",3920,0,0,1,1,2679,1.7,1330,1317,1.7,1122,7423,2.4,6069
 Fenway,"1377 Boylston St.,Unit 909,Boston,MA,03125,Fenway",3920,0,0,1,1,2679,1.7,1330,1317,1.7,1122,7423,2.4,6069
@@ -3045,7 +3045,7 @@ North End,"28 Fleet St.,Unit B,Boston,MA,02113,North End",5625,0,0,3,2,4949,2.4,
 Back Bay,"135 Clarendon St.,Unit 6X,Boston,MA,02116,Back Bay",5650,0,0,1,1,2362,1.7,1892,5631,4.1,2921,8969,2.4,14827
 North Cambridge,"80 Cambridgepark Dr.,Unit 540,Cambridge,MA,02140,North Cambridge",5657,0,0,3,2,27571,4.1,10062,14765,4.1,8568,20296,2.4,10444
 North Cambridge,"80 Cambridgepark Dr.,Unit 600,Cambridge,MA,02140,North Cambridge",5663,0,0,3,2,27571,4.1,10062,14765,4.1,8568,20296,2.4,10444
-Charlestown,"250 1st Ave.,Unit 1-0612,Boston,MA,02129,Charlestown",5668,0,0,2,2,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0612,Boston,MA,02129,Charlestown",5668,0,0,2,2,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Allston,"78 Linden St.,Boston,MA,02134,Allston",5695,0,0,5,3,5717,3.4,5536,1367,1.7,1046,4129,2.4,4158
 Fort Hill,"143 Marcella St.,Unit 1,Boston,MA,02119,Fort Hill",5699,0,0,4,2,2439,1.7,1662,5839,3.4,3766,9512,4.1,7652
 Roxbury,"83-85 Highland St.,Unit 2,Boston,MA,02119,Roxbury",5700,0,0,5,2,2199,1.7,1614,5599,3.4,3606,9245,4.1,7962
@@ -3100,7 +3100,7 @@ Back Bay,"19 Stanhope St.,Unit 1B,Boston,MA,02116,Back Bay",5950,0,0,1,2,2401,1.
 North End,"50 Causeway St.,Unit 3504,Boston,MA,02114,North End",5965,0,0,2,2,4902,2.4,4894,6827,2.4,4378,11522,2.4,15054
 North Cambridge,"1 Whittemore Ave.,Unit 29,Cambridge,MA,02140,North Cambridge",5966,0,0,4,3,9309,3.4,10525,17077,6.8,9031,11974,5.8,10907
 Waterfront,"80 Broad St.,Unit 201,Boston,MA,02110,Waterfront",5975,0,0,3,2,4649,2.4,5015,7903,4.1,6718,11260,2.4,16422
-Charlestown,"250 1st Ave.,Unit 1-0600,Boston,MA,02129,Charlestown",5993,0,0,2,2,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0600,Boston,MA,02129,Charlestown",5993,0,0,2,2,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Bay Village,"212 Stuart St.,Unit 1805,Boston,MA,02116,Bay Village",5995,0,0,1,1,2644,1.7,3864,4770,2.4,3348,9465,2.4,14935
 Mission Hill,"22 Fisher Ave.,Unit 3,Boston,MA,02120,Mission Hill",6000,0,0,4,1,2470,1.7,1860,5870,3.4,4021,9290,4.1,7221
 Mission Hill,"11 Carmel St.,Unit 1,Boston,MA,02120,Mission Hill",6000,0,0,4,1,1531,2.4,1308,5319,4.1,2757,8109,4.1,7145
@@ -3135,13 +3135,13 @@ Mission Hill,"688 Parker,Unit 2,Boston,MA,02120,Mission Hill",6000,0,0,4,2,1712,
 Waterfront,"234 Causeway St.,Unit 1004,Boston,MA,02114,Waterfront",6000,0,0,3,2,4995,2.4,6304,8762,4.1,4660,11615,2.4,17723
 Fenway,"1260 Boylston St.,Unit 1527,Boston,MA,02215,Fenway",6016,0,0,2,1,686,0,919,798,0,1116,7815,2.4,6481
 North End,"101 Canal St.,Unit 825,Boston,MA,02114,North End",6020,0,0,2,2,4849,2.4,6385,6774,2.4,4696,11469,2.4,17804
-Charlestown,"250 1st Ave.,Unit 1-0418,Boston,MA,02129,Charlestown",6048,0,0,2,2,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0418,Boston,MA,02129,Charlestown",6048,0,0,2,2,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Brighton,"175 Washington St.,Unit 3602,Boston,MA,02135,Brighton",6079,0,0,3,3,6625,1.7,5395,3510,1.7,3110,3036,2.4,2797
 Mission Hill,"3 Parker Hill Ter.,Unit 2,Boston,MA,02120,Mission Hill",6100,0,0,4,1,1854,2.4,1829,4577,3.4,3071,12357,4.1,6271
 Mission Hill,"3 Parker Hill Ter.,Unit 2,Boston,MA,02120,Mission Hill",6100,0,0,4,1,1854,2.4,1829,4577,3.4,3071,12357,4.1,6271
 Jamaica Plain,"7 Eliot St.,Boston,MA,02130,Jamaica Plain",6100,0,0,3,3,11827,5.1,6100,7494,3.4,5740,15275,4.1,7130
 Mission Hill,"61 Wait St.,Unit 1,Boston,MA,02120,Mission Hill",6100,0,0,4,2,1602,2.4,1717,4325,3.4,3048,13104,2.4,6805
-Charlestown,"250 1st Ave.,Unit 1-0235,Boston,MA,02129,Charlestown",6128,0,0,2,2,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0235,Boston,MA,02129,Charlestown",6128,0,0,2,2,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 North End,"50 Causeway St.,Unit 2114,Boston,MA,02114,North End",6180,0,0,2,2,4902,2.4,4894,6827,2.4,4378,11522,2.4,15054
 Brighton,"125 Guest St.,Unit 1711,Boston,MA,02135,Brighton",6185,0,0,3,2,7484,3.4,8753,2530,1.7,2377,4282,4.1,3383
 Mission Hill,"190 Hillside St.,Unit 2,Boston,MA,02120,Mission Hill",6200,0,0,4,2,1816,2.4,1655,4538,3.4,3175,12318,4.1,6375
@@ -3157,7 +3157,7 @@ Midtown,"580 Washington St.,Unit 1212,Boston,MA,02111,Midtown",6250,0,0,2,2,3279
 Midtown,"580 Washington St.,Unit PH-H,Boston,MA,02111,Midtown",6250,0,0,2,2,3246,2.4,4613,6872,4.1,7008,9860,2.4,15818
 Mission Hill,"10 Eldora St.,Unit 10,Boston,MA,02120,Mission Hill",6250,0,0,5,1,1944,2.4,1784,4666,3.4,3278,13446,2.4,6478
 Brighton,"125 Guest St.,Unit 1707,Boston,MA,02135,Brighton",6287,0,0,3,2,7484,3.4,8753,2530,1.7,2377,4282,4.1,3383
-Charlestown,"250 1st Ave.,Unit 1-0809,Boston,MA,02129,Charlestown",6295,0,0,2,2,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0809,Boston,MA,02129,Charlestown",6295,0,0,2,2,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Mission Hill,"61 Wait St.,Unit 3,Boston,MA,02120,Mission Hill",6300,0,0,4,2,1602,2.4,1717,4325,3.4,3048,13104,2.4,6805
 Mission Hill,"836 Huntington Ave.,Unit 3,Boston,MA,02120,Mission Hill",6300,0,0,4,1,1599,2.4,1594,8406,2.4,2836,12122,4.1,6036
 Mission Hill,"101 South Huntington Ave.,Unit 302,Boston,MA,02130,Mission Hill",6383,0,0,2,2,2123,2.4,2119,8930,2.4,2864,12681,4.1,6064
@@ -3254,7 +3254,7 @@ Mission Hill,"84 Calumet St.,Unit 3,Boston,MA,02120,Mission Hill",6800,0,0,4,1,1
 Mission Hill,"12 Parker Hill Ave.,Unit 2,Boston,MA,02120,Mission Hill",6800,0,0,4,2,1661,2.4,1636,4385,3.4,2878,13163,2.4,6078
 North End,"50 Causeway St.,Unit 3702,Boston,MA,02114,North End",6820,0,0,2,2,4902,2.4,4894,8733,4.1,4378,11522,2.4,15054
 Bay Village,"212 Stuart St.,Unit 202,Boston,MA,02116,Bay Village",6855,0,0,2,2,2644,1.7,3864,4770,2.4,3348,9465,2.4,14935
-Charlestown,"250 1st Ave.,Unit 1-0807,Boston,MA,02129,Charlestown",6862,0,0,2,2,18957,9.899999999999999,14224,17377,3.4,14438,31104,9.4,6151
+Charlestown,"250 1st Ave.,Unit 1-0807,Boston,MA,02129,Charlestown",6862,0,0,2,2,18957,9.9,14224,17377,3.4,14438,31104,9.4,6151
 Harvard Square,"77 Dana,Unit 2F,Cambridge,MA,02138,Harvard Square",6900,0,0,4,2,4919,1.7,6476,6981,5.1,4032,10004,5.8,10215
 Brighton,"260 Foster St.,Unit 1,Boston,MA,02135,Brighton",6920,0,0,4,2,11688,3.4,11014,4455,2.4,4414,1316,2.4,794
 North End,"1 Canal St.,Unit PH 1203,Boston,MA,02114,North End",6940,0,0,2,2,4506,2.4,5252,7778,4.1,4736,11141,2.4,17935
