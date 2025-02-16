@@ -93,7 +93,7 @@ def recommend(data, location, rent, violent, overall, bed, bath, transitDistance
     #     for i in range(len(scaling_factors)):
     #         scaled_diff[i] *= scaling_factors[i]
 
-        distance = np.linalg.norm(scaled_diff)
+        distance = np.linalg.norm(diff)
         correlation = 1 / (1 + distance)
         correlations.append(correlation)
 
