@@ -59,9 +59,11 @@ const Services: React.FC = () => {
         // Hide the chatbot modal; later the Navbar Help button can re-open it.
         setShowChatbot(false);
         if (data) {
-            navigate(routes.RECOMMENDATION, { replace: true });
+            // Pass the final data in the navigation state to the recommendation page.
+            navigate(routes.RECOMMENDATION, { state: { chatbotData: data } });
         }
     };
+
 
     return (
         <React.Fragment>

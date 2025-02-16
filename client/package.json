@@ -17,6 +17,7 @@
     "@mui/material": "^6.4.4",
     "@mui/system": "^6.1.8",
     "@mui/x-data-grid": "^7.23.0",
+    "@react-google-maps/api": "^2.20.6",
     "@reduxjs/toolkit": "^2.3.0",
     "@stripe/stripe-js": "^5.2.0",
     "axios": "^1.7.9",
