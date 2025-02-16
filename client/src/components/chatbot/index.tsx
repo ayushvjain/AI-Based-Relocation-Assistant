@@ -182,7 +182,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
 
     // The initial greeting.
     const initialBotText =
-      'Hi, welcome to [app name]! We are here to help you ease your house hunting. How can I help you today?';
+      'Hi, welcome to RentRobo! We are here to help you ease your house hunting. How can I help you today?';
 
     // Simulate bot response with a 1‑second typing indicator.
     const simulateBotResponse = (response: string, nextStep: number) => {
