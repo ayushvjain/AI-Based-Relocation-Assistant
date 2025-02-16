@@ -18,23 +18,23 @@ export interface FinalChatOutput {
 const RecommendationPage: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  // Initialize chatbotData state from the navigation state.
   const [chatbotData, setChatbotData] = useState<FinalChatOutput | undefined>(location.state?.chatbotData);
   const [recommendations, setRecommendations] = useState<Recommendation[]>([]);
+  const [selectedRecommendation, setSelectedRecommendation] = useState<Recommendation | null>(null);
   const [showChatbot, setShowChatbot] = useState<boolean>(false);
   const chatbotRef = useRef<FloatingChatbotHandle>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
 
   const handleChatComplete = (data: FinalChatOutput) => {
     setChatbotData(data);
     console.log("Chatbot data:", data);
-    // Hide the chatbot modal; later the Navbar Help button can re-open it.
     setShowChatbot(false);
     if (data) {
-      // Pass the final data in the navigation state to the recommendation page.
       navigate(routes.RECOMMENDATION, { state: { chatbotData: data } });
     }
   };
 
+  // Use chatbot data to fetch recommendations.
   useEffect(() => {
     if (chatbotData) {
       axios
@@ -49,20 +49,102 @@ const RecommendationPage: React.FC = () => {
     }
   }, [chatbotData]);
 
+  // Global click listener to clear selection if click is outside container.
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setSelectedRecommendation(null);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <React.Fragment>
-      <NavBar
-        onHelpClick={() => {
-          // Open the chat window directly when Help is clicked.
-          chatbotRef.current?.openChatWindow();
+    <>
+      <NavBar onHelpClick={() => chatbotRef.current?.openChatWindow()} />
+      {/* Title between navbar and container */}
+      <div style={{ textAlign: 'center', marginTop: '20px', marginBottom: '10px' }}>
+        <h2>Recommended Places</h2>
+      </div>
+      {/* Outer container: 80% width, 80vh height, with margin from navbar */}
+      <div
+        ref={containerRef}
+        style={{
+          margin: '0 auto',
+          width: '80%',
+          height: '80vh',
+          display: 'flex',
+          flexDirection: 'row',
+          overflow: 'hidden',
+          borderRadius: '12px',
+          border: '1px solid #ccc',
         }}
-      />
-      <h1>Property Recommendations</h1>
-      {/* Render the Google Map with the fetched recommendations */}
-      <GoogleMapComponent recommendations={recommendations} />
-      {/* Floating Chatbot is always mounted so the floating icon appears on refresh */}
+      >
+        {/* Left Column: Map (50% width) */}
+        <div style={{ flex: '0 0 50%', height: '100%' }}>
+          <GoogleMapComponent
+            recommendations={recommendations}
+            selectedMarker={selectedRecommendation}
+          />
+        </div>
+        {/* Right Column: Cards in a 2-column grid */}
+        <div
+          style={{
+            flex: '0 0 50%',
+            height: '100%',
+            overflowY: 'auto',
+            padding: '10px',
+            background: '#f8f8f8',
+            display: 'grid',
+            gridTemplateColumns: 'repeat(2, 1fr)',
+            gap: '10px',
+          }}
+        >
+          {recommendations.map((rec, index) => (
+            <div
+              key={index}
+              onClick={() => setSelectedRecommendation({ ...rec })}
+              style={{
+                height: '180px',
+                border: '1px solid #ccc',
+                borderRadius: '4px',
+                padding: '10px',
+                backgroundColor:
+                  selectedRecommendation && selectedRecommendation.Address === rec.Address
+                    ? '#e0f7fa'
+                    : '#fff',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+                cursor: 'pointer',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden',
+                wordBreak: 'break-word',
+              }}
+            >
+              <div style={{ flex: '1 1 auto', overflow: 'hidden' }}>
+                <h4 style={{ margin: '0 0 5px 0', fontSize: '1em' }}>{rec.Address}</h4>
+                <p style={{ margin: '0 0 5px 0', fontSize: '0.9em' }}>
+                  <strong>Area:</strong> {rec.Area_Name}
+                </p>
+                <p style={{ margin: '0 0 5px 0', fontSize: '0.9em' }}>
+                  <strong>Bedrooms:</strong> {rec.Bed}
+                </p>
+                <p style={{ margin: '0 0 5px 0', fontSize: '0.9em' }}>
+                  <strong>Bathrooms:</strong> {rec.Bath}
+                </p>
+              </div>
+              <div style={{ flexShrink: 0, textAlign: 'right', fontWeight: 'bold' }}>
+                <p style={{ margin: 0 }}>Rent: ${rec.Rent}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
       <FloatingChatbot ref={chatbotRef} onChatComplete={handleChatComplete} />
-    </React.Fragment>
+    </>
   );
 };
 
