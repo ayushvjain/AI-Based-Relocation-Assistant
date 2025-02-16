@@ -38,8 +38,8 @@ command to run if program contains helper info
 
 Kevin Tang
 Srikanth Sharma
-Ayush Jain
-Sabari 
+Ayush Vineet Jain
+Sabari Mathavan
 
 
 ## License
