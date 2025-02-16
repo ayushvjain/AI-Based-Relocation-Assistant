@@ -5,7 +5,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../utils/languageSwitcher.tsx';
-import appLogo from '../../assets/logo.png';
+// import appLogo from '../../assets/logo.png';
 import routes from '../../constants/routes.json';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
@@ -105,12 +105,12 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* Logo */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', mr: 2, cursor: 'pointer' }} onClick={() => navigateHome()}>
-            <img
+            {/* <img
               src={appLogo}
               alt="App Logo"
               style={{ height: '70px', cursor: 'pointer' }}
 
-            />
+            /> */}
           </Box>
 
           {/* Desktop Menu */}
@@ -176,11 +176,11 @@ function ResponsiveAppBar() {
               <MenuIcon />
             </IconButton>
             <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', mr: 2, cursor: 'pointer' }} onClick={() => navigate(routes.CUSTOMER_HOME)}>
-              <img
+              {/* <img
                 src={appLogo}
                 alt="App Logo"
                 style={{ height: '70px', cursor: 'pointer' }}
-              />
+              /> */}
             </Box>
             <Menu
               id="menu-appbar"

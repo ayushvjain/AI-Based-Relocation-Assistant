@@ -9,7 +9,7 @@ import {
     Divider,
 } from "@mui/material";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import appLogo from '../../assets/logo.png';
+// import appLogo from '../../assets/logo.png';
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -83,12 +83,12 @@ const Footer: React.FC = () => {
                 <Grid item xs={12} md={4}>
                     <Box sx={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
                         <Box sx={{ display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
-                            <img
+                            {/* <img
                                 src={appLogo}
                                 alt="App Logo"
                                 style={{ height: '70px', cursor: 'pointer' }}
 
-                            />
+                            /> */}
                         </Box>
                         <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px" }}>
                             Fix Finder
