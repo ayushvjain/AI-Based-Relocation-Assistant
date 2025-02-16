@@ -1,131 +1,109 @@
-# import sys
-# import json
-
-# def recommend_houses(data):
-#     """
-#     Dummy function that simulates a recommendation system.
-#     Replace this with your actual recommendation logic.
-#     """
-
-#     recommendations = [
-#         {
-#             "Area Name": "Fenway",
-#             "Address": "165 Hemenway Unit 5",
-#             "Rent": 2950,
-#             "Violent CrimeRate": 0.2866,
-#             "Overall CrimeRate": 1.86,
-#             "Bed": 2.0,
-#             "Bath": 1.0
-#         },
-#         {
-#             "Area Name": "Fenway",
-#             "Address": "17 Hemenway St., Unit 3, Boston, MA",
-#             "Rent": 2850,
-#             "Violent CrimeRate": 0.2866,
-#             "Overall CrimeRate": 1.86,
-#             "Bed": 2.0,
-#             "Bath": 1.0
-#         }
-#     ]
-
-#     return recommendations
-
-# if __name__ == "__main__":
-#     # Read JSON input from stdin
-#     input_data = json.load(sys.stdin)
-
-#     # Process the input and generate recommendations
-#     recommendations = recommend_houses(input_data)
-
-#     # Output JSON response
-#     print(json.dumps(recommendations))
-
-
 import pandas as pd
 import numpy as np
 from sklearn.preprocessing import MinMaxScaler
 import json
 
-def scale(data, input_value):
-    data_min = np.min(data)
-    data_max = np.max(data)
+def scale(data, input):
+    dataMin = np.min(data)
+    dataMax = np.max(data)
 
-    scaled_data = (data - data_min) / (data_max - data_min)
-    scaled_input = (input_value - data_min) / (data_max - data_min)
+    # Apply MinMax scaling to the single value
+    scaledData = (data - dataMin) / (dataMax - dataMin)
+    scaledInput = (input - dataMin) / (dataMax - dataMin)
 
-    return scaled_data, scaled_input
+    return scaledData, scaledInput
 
-def recommend(data, location, rent, violent, overall, bed, bath, transit_distance, scaling_factors=[1, 1, 1]):
-    rentScale, distanceScale, safetyScale = scaling_factors
-    rentScale *= (4 - rentScale)
-    distanceScale *= (4 - distanceScale)
+def recommend(data, location, rent, violent, overall, bed, bath, transitDistance, scaling_factors = [1, 1, 1]):
+    rentFactor, distanceFactor, safetyFactor = scaling_factors
+    safetyFactor = 3
+    rentScale = 2 / rentFactor
+    distanceScale = 2 / distanceFactor
 
-    data_rent = data['Rent']
+    # Calculate Rent/Distance Tradeoff
+    dataRent = data['Rent']
     rooms = data['Bed'] + data['Bath'] * 0.5
-    data_rent /= rooms
+    dataRent /= rooms
     rent /= (bed + bath * 0.5)
 
-    rent_tradeoff = np.exp(((data_rent - rent) / np.average(data_rent)) * rentScale)
+    rentTradeoff = ((dataRent - rent) / np.average(dataRent))
+    rentTradeoff = np.exp(rentTradeoff * rentScale)
 
-    data['rentTradeoff'] = rent_tradeoff
-    data['newRent'] = data_rent
+    data['rentTradeoff'] = (rentTradeoff)
+    data['newRent'] = dataRent
 
-    if location == "Northeastern University":
-        data_transit_distance = data['Northeastern University_transit']
-    elif location == "Boston University":
-        data_transit_distance = data['Boston University_transit_distance']
-    elif location == "Boston College":
-        data_transit_distance = data['Boston College_transit_distance']
-    else:
-        return data.head(0)  # Return empty if location is invalid
+    match location:
+        case "Northeastern University":
+            dataTransitDistance = data['Northeastern University_transit']
+        case "Boston University":
+            dataTransitDistance = data['Boston University_transit_distance']
+        case "Boston College":
+            dataTransitDistance = data['Boston College_transit_distance']
 
-    distance_tradeoff = np.exp(((data_transit_distance - transit_distance) / np.average(data_transit_distance)) * distanceScale)
 
-    data['distanceTradeoff'] = distance_tradeoff
-    data_tradeoff = rent_tradeoff + distance_tradeoff
+    distanceTradeoff = ((dataTransitDistance - transitDistance) / np.average(dataTransitDistance))
+    distanceTradeoff = np.exp(distanceTradeoff * distanceScale)
 
-    data_violent_crime, violent_scaled = scale(data['Violent CrimeRate'], violent)
-    data_overall_crime, overall_scaled = scale(data['Overall CrimeRate'], overall)
+    data['distanceTradeoff'] = distanceTradeoff
+    dataTradeoff = rentTradeoff + distanceTradeoff
 
-    data_aggregated_crime = 2 * data_violent_crime + data_overall_crime
-    aggregated_crime = 2 * violent_scaled + overall_scaled
 
-    data_scaled_crime, scaled_crime = scale(data_aggregated_crime, aggregated_crime)
-    data_scaled_crime *= 3
+    # Calculate Base Tradeoff (Might be able to hard code as 2)
+    tradeoff = np.exp((rent - rent) / np.average(dataRent)) + np.exp((transitDistance - transitDistance) / np.average(dataTransitDistance))
 
-    data['Crime'] = data_scaled_crime
+    # Scale Crime Data
+    dataViolentCrime, violentScaled = scale(data['Violent CrimeRate'], violent)
+    dataOverallCrime, overallScaled = scale(data['Overall CrimeRate'], overall)
 
-    scaled_data_rent, scaled_rent = scale(data_rent, rent)
-    scaled_data_transit, scaled_transit = scale(data_transit_distance, transit_distance)
+    dataAggregatedCrime = 2 * dataViolentCrime + dataOverallCrime
+    aggregatedCrime = 2 * violentScaled + overallScaled
 
-    input_vector = np.array([scaled_transit, scaled_rent, np.mean(data_tradeoff)])
+    dataScaledCrime, scaledCrime = scale(dataAggregatedCrime, aggregatedCrime)
+    dataScaledCrime *= 3
 
-    apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff)))
+    data['Crime'] = dataScaledCrime
 
-    if safetyScale == 1:
-        apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff, dataScaledCrime)))
-        input_vector = np.array([scaled_data_transit, scaled_data_rent, data_tradeoff, 0])
+    # Create Feature Vectors
+    scaledDataRent, scaledRent = scale(dataRent, rent)
+    scaledDataTransit, scaledTransit = scale(dataTransitDistance, transitDistance)
+    apartmentFeatures = list(zip(scaledDataTransit, scaledDataRent, dataTradeoff))
+    
 
-    elif safetyScale == 2:
-        apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff, dataScaledCrime)))
-        input_vector = np.array([scaled_data_transit, scaled_data_rent, data_tradeoff, 1])
-        
 
-    similarities = []
+    # Original User Apartment Comparison
+    input = np.array([scaledTransit, scaledRent, tradeoff])
 
-    for vector in apartment_vectors:
-        vector = np.array(vector)  # Ensure vector is NumPy array
-        diff = input_vector - vector
-        
-        distance = np.linalg.norm(diff)
-        similarity = 1 / (1 + distance)
-        similarities.append(similarity)
+    if safetyFactor == 1:
+        apartmentFeatures = list(zip(scaledDataTransit, scaledDataRent, dataTradeoff, dataScaledCrime))
+        input = np.array([scaledTransit, scaledRent, tradeoff, 0])
 
-    # ✅ Fix: Extract only correlation values
-    data['similarity'] = similarities
-    data['dataTradeoff'] = data_tradeoff
+    elif safetyFactor == 2:
+        # dataScaledCrime = [0 if val <= 1 else val for val in dataScaledCrime]
+        apartmentFeatures = list(zip(scaledDataTransit, scaledDataRent, dataTradeoff, dataScaledCrime))
+        input = np.array([scaledTransit, scaledRent, tradeoff, 1])
 
-    return data.sort_values(by='similarity', ascending=False)
+    apartmentVectors = np.array(apartmentFeatures)
+
+    correlations = []
+
+    # Loop through each vector in the array and compute the Pearson correlation
+    for vector in apartmentVectors:
+        diff = input - vector
+    
+    # Apply scaling to the difference for each component
+        scaled_diff = diff.copy()
+        for i in range(len(scaling_factors)):
+            scaled_diff[i] *= scaling_factors[i]
+
+        distance = np.linalg.norm(scaled_diff)
+        correlation = 1 / (1 + distance)
+        correlations.append(correlation)
+
+    data['similarity'] = correlations
+    data['dataTradeoff'] = dataTradeoff
+
+    recommend = data.sort_values(by='similarity', ascending=False)
+
+    return recommend
 
 if __name__ == "__main__":
     all_data = pd.read_csv('updated_crime_rates.csv')
