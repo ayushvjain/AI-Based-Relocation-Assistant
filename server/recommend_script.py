@@ -88,10 +88,10 @@ def recommend(data, location, rent, violent, overall, bed, bath, transitDistance
     for vector in apartmentVectors:
         diff = input - vector
     
-    # Apply scaling to the difference for each component
-        scaled_diff = diff.copy()
-        for i in range(len(scaling_factors)):
-            scaled_diff[i] *= scaling_factors[i]
+    # # Apply scaling to the difference for each component
+    #     scaled_diff = diff.copy()
+    #     for i in range(len(scaling_factors)):
+    #         scaled_diff[i] *= scaling_factors[i]
 
         distance = np.linalg.norm(scaled_diff)
         correlation = 1 / (1 + distance)
