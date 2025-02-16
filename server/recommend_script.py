@@ -13,7 +13,7 @@ def scale(data, input):
 
     return scaledData, scaledInput
 
-def recommend(data, location, rent, violent, overall, bed, bath, transitDistance, scaling_factors = [1, 1, 1]):
+def recommend(data, address, location, rent, violent, overall, bed, bath, transitDistance, scaling_factors = [1, 1, 1]):
     rentFactor, distanceFactor, safetyFactor = scaling_factors
     rentScale = 2 / rentFactor
     distanceScale = 2 / distanceFactor
@@ -87,11 +87,6 @@ def recommend(data, location, rent, violent, overall, bed, bath, transitDistance
     # Loop through each vector in the array and compute the Pearson correlation
     for vector in apartmentVectors:
         diff = input - vector
-    
-    # # Apply scaling to the difference for each component
-    #     scaled_diff = diff.copy()
-    #     for i in range(len(scaling_factors)):
-    #         scaled_diff[i] *= scaling_factors[i]
 
         distance = np.linalg.norm(diff)
         correlation = 1 / (1 + distance)
@@ -101,6 +96,7 @@ def recommend(data, location, rent, violent, overall, bed, bath, transitDistance
     data['dataTradeoff'] = dataTradeoff
 
     recommend = data.sort_values(by='similarity', ascending=False)
+    recommend = recommend[recommend['Address'] != address]
 
     return recommend
 

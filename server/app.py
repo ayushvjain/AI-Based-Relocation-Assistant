@@ -29,6 +29,7 @@ def get_recommendations():
             return jsonify({"error": "Invalid input. Please provide both current_living_conditions and preference_of_future_house"}), 400
 
         # Extract individual inputs
+        address = current_living_conditions[0]
         location = current_living_conditions[1]
         rent = int(current_living_conditions[2])
         bed = int(current_living_conditions[3])
@@ -38,7 +39,7 @@ def get_recommendations():
         location_pref = preference_of_future_house.get("Location", 1)
         safety_pref = preference_of_future_house.get("Safety", 1)
 
-        transit_data = get_transit_data(current_living_conditions[0], location)
+        transit_data = get_transit_data(address, location)
         transit_distance = transit_data['transit_distance']
 
         # Dummy values for crime and transit (modify if needed)
@@ -47,7 +48,7 @@ def get_recommendations():
 
         # Call recommendation function
         recommendations = recommend(
-            cleanedData, location, rent, violent_crime, overall_crime, bed, bath, transit_distance,
+            cleanedData, address, location, rent, violent_crime, overall_crime, bed, bath, transit_distance,
             scaling_factors=[rent_pref, location_pref, safety_pref]
         )
 

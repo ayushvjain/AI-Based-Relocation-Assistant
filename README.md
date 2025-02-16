@@ -10,11 +10,6 @@ The AI-Based Relocation Assistant is an intelligent platform designed to help us
 
 ## Getting Started
 
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
 ### Installing
 
 pip install requirements.txt
@@ -24,14 +19,9 @@ pip install requirements.txt
 * How to run the program
 * Step-by-step bullets
 ```
-code blocks for commands
-```
+Go into server folder and run python app.py
 
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
+Go into client folder and run npm start
 ```
 
 ## Authors
