@@ -14,5 +14,6 @@
 	"PROFILE":"/Profile",
 	"BOOKING_HISTORY":"/Booking-History",
 	"SHARE_DETAILS":"/share",
-	"SHARE_BOOKING_HISTORY":"/share/booking-history"
+	"SHARE_BOOKING_HISTORY":"/share/booking-history",
+	"RECOMMENDATION":"/Recommendation"
 }
