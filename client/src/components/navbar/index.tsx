@@ -53,10 +53,10 @@ function ResponsiveAppBar() {
     { name: t('Profile'), route: routes.PROFILE },
   ];
 
-  const pagesServiceProvider = [
-    { name: t('Dashboard'), route: routes.SERVICE_PROVIDER_DASHBOARD },
-    { name: t('Profile'), route: routes.PROFILE },
-  ];
+  // const pagesServiceProvider = [
+  //   // { name: t('Dashboard'), route: routes.SERVICE_PROVIDER_DASHBOARD },
+  //   // { name: t('Profile'), route: routes.PROFILE },
+  // ];
 
   // Generate initials from firstname and lastname
   const userInitials = `${firstname[0] || ''}${lastname[0] || ''}`.toUpperCase();
@@ -114,54 +114,7 @@ function ResponsiveAppBar() {
           </Box>
 
           {/* Desktop Menu */}
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
-            {role?.toLowerCase()=='customer' ? pages.map((page) => (
-              <Button
-                key={page.name}
-                onClick={() => {
-                  navigate(page.route);
-                  handleCloseNavMenu();
-                }}
-                sx={{
-                  my: 2,
-                  mx: 1,
-                  color: location.pathname === page.route ? '#FFEB3B' : 'white',
-                  display: 'block',
-                  fontWeight: location.pathname === page.route ? 'bold' : 'normal',
-                  textTransform: 'none',
-                  '&:hover': {
-                    color: '#FFEB3B',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  },
-                }}
-              >
-                {page.name}
-              </Button>
-            )):
-            pagesServiceProvider.map((page) => (
-              <Button
-                key={page.name}
-                onClick={() => {
-                  navigate(page.route);
-                  handleCloseNavMenu();
-                }}
-                sx={{
-                  my: 2,
-                  mx: 1,
-                  color: location.pathname === page.route ? '#FFEB3B' : 'white',
-                  display: 'block',
-                  fontWeight: location.pathname === page.route ? 'bold' : 'normal',
-                  textTransform: 'none',
-                  '&:hover': {
-                    color: '#FFEB3B',
-                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  },
-                }}
-              >
-                {page.name}
-              </Button>
-            ))}
-          </Box>
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}></Box>
 
           {/* Mobile Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -235,7 +188,7 @@ function ResponsiveAppBar() {
                 <Avatar sx={{ size: '35px' }} alt={`${firstname} ${lastname}`}>{userInitials}</Avatar>
               </IconButton>
             </Tooltip>
-            <Menu
+            {/* <Menu
               sx={{ mt: '45px' }}
               id="menu-appbar"
               anchorEl={anchorElUser}
@@ -262,7 +215,7 @@ function ResponsiveAppBar() {
                   </MenuItem>
                 )
               )}
-            </Menu>
+            </Menu> */}
           </Box>
         </Toolbar>
       </Container>

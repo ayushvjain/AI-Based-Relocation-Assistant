@@ -187,9 +187,9 @@ const Services: React.FC = () => {
                     <Typography variant="h4" sx={{ mb: 3 }}>
                         {t('landing.subtext')}
                     </Typography>
-                    <Button variant="contained" color="success" size="large" onClick={() => navigate(routes.SERVICES)}>
+                    {/* <Button variant="contained" color="success" size="large" onClick={() => navigate(routes.SERVICES)}>
                         {t('View.Services')}
-                    </Button>
+                    </Button> */}
                 </Container>
             </Box>
 
@@ -207,7 +207,7 @@ const Services: React.FC = () => {
                             {t('Landing.Info.Description')}
                         </Typography>
                     </Grid>
-                    <Grid item xs={12} md={5}>
+                    {/* <Grid item xs={12} md={5}>
                         <Card>
                             <CardContent sx={{
                                 padding: '4px !important',
@@ -217,7 +217,7 @@ const Services: React.FC = () => {
                                     transition: 'transform 0.2s',
                                 }
                             }}>
-                                {/* <Box
+                                <Box
                                     component="img"
                                     src={sectionFixA}
                                     alt="Service Illustration"
@@ -226,14 +226,14 @@ const Services: React.FC = () => {
                                         height: '100%',
                                         borderRadius: 1
                                     }}
-                                /> */}
+                                />
                             </CardContent>
                         </Card>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
             </Container>
             <Container sx={{ pt: 6, backgroundColor: '#eff1f0', maxWidth: '100vw !important', textAlign: 'start' }}>
-                <Grid container spacing={4} padding="0px 20px">
+                {/* <Grid container spacing={4} padding="0px 20px">
                     <Grid item xs={12} display='flex' flexDirection='column' justifyContent='center' >
                         <Typography variant="h4" sx={{ fontSize: '13px', fontWeight: "bold", color: '#46a225', mb: 2, textTransform: "uppercase", }}>
                             {t('Landing.Carousal.SubText')}
@@ -242,7 +242,7 @@ const Services: React.FC = () => {
                             {t('Landing.Carousal.Title')}
                         </Typography>
                     </Grid>
-                </Grid>
+                </Grid> */}
                 <Grid container spacing={4} justifyContent='center' sx={{ mt: 6 }}>
                     <Grid item xs={12} display='flex' justifyContent='center'>
                         <Footer />

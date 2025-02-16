@@ -54,7 +54,7 @@ function AppRouter(): JSX.Element {
     <Routes>
       {/* <Route path={urls.LOGIN} element={<Login />} /> */}
       {/* <Route path={urls.LANDING} element={<Navigate to={urls.LOGIN} replace />} /> */}
-      <Route path={urls.CUSTOMER_HOME} element={<CustomerHome />} />
+      <Route path={urls.LANDING} element={<CustomerHome />} />
       {/* <Route path={urls.SERVICES} element={<Services />} />
       <Route path={urls.SERVICES_PROVIDERS} element={<ServicesProviders />} />
       <Route path={urls.SERVICE_PROVIDER_DASHBOARD} element={<ServiceProviderHome />} />
