@@ -1,37 +1,49 @@
-# AI-Based-Relocation-Assistant.
+# AI-Based Relocation Assistant
 
-# Project Title
+## Project Overview
 
-Simple overview of use/purpose.
+The AI-Based Relocation Assistant is an intelligent platform designed to help users discover their ideal home based on their current living conditions and future preferences. By leveraging advanced recommendation algorithms and artificial intelligence, this system simplifies the home-search process by delivering personalized property recommendations.
 
 ## Description
 
-The AI-Based Relocation Assistant is an intelligent platform designed to help users find their ideal home based on their current living situation and preferences for a future residence. Unlike traditional search methods that only rely on basic filters, this system leverages a recommendation engine that compares your existing living conditions with potential new homes from our extensive listing of houses.
+Finding the perfect home can be overwhelming with traditional search methods. Our solution:
+
+- **Analyzes your current living situation:** Gathers details such as your address, rent, and current property type.
+- **Captures your future preferences:** Collects your desired location, safety, and budget priorities.
+- **Generates personalized recommendations:** Uses an AI-powered recommendation engine that compares your data against an extensive property database to suggest the best matches for your next home.
+
+This project is built with a **React.js** frontend and a **Flask** backend, seamlessly working together to provide a responsive and interactive user experience.
 
 ## Getting Started
 
-### Installing
+Follow these instructions to set up and run the project locally.
 
-pip install requirements.txt
+### Prerequisites
 
-### Executing program
+- **Python 3.x** – [Download Python](https://www.python.org/downloads/)
+- **Node.js and npm** – [Download Node.js](https://nodejs.org/)
+- **Git** – [Download Git](https://git-scm.com/downloads)
 
-* How to run the program
-* Step-by-step bullets
+### Installation Steps
+
+#### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/AI-Based-Relocation-Assistant.git
 ```
-Go into server folder and run python app.py
-
-Go into client folder and run npm start
+#### 2. Navigate to the Project Repository
+```
+cd AI-Based-Relocation-Assistant
+```
+#### 3. Run the client app
+```
+cd ../client
+npm install
+```
+#### 4. Run the server app
+```
+cd server
+python app.py
 ```
 
-## Authors
 
-Kevin Tang
-Srikanth Sharma
-Ayush Vineet Jain
-Sabari Mathavan
-
-
-## License
-
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
