@@ -97,6 +97,10 @@ def recommend(data, address, location, rent, violent, overall, bed, bath, transi
 
     recommend = data.sort_values(by='similarity', ascending=False)
     recommend = recommend[recommend['Address'] != address]
+    recommend = recommend[
+        ((recommend['Bath'] == bath) | (recommend['Bath'] == bath + 1)) &
+        ((recommend['Bed'] == bed) | (recommend['Bed'] == bed + 1))
+    ]
 
     return recommend
 
