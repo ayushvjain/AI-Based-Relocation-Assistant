@@ -53,8 +53,10 @@ from flask import Flask, request, jsonify
 import pandas as pd
 from get_route_script import get_transit_data
 from recommend_script import recommend  # Import the recommendation function
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Load data once to avoid reading it multiple times on each request
 allData = pd.read_csv('updated_crime_rates.csv')
