@@ -51,6 +51,7 @@
 
 from flask import Flask, request, jsonify
 import pandas as pd
+from get_route_script import get_transit_data
 from recommend_script import recommend  # Import the recommendation function
 
 app = Flask(__name__)
@@ -86,10 +87,12 @@ def get_recommendations():
         location_pref = preference_of_future_house.get("Location", 1)
         safety_pref = preference_of_future_house.get("Safety", 1)
 
+        transit_data = get_transit_data(current_living_conditions[0], location)
+
         # Dummy values for crime and transit (modify if needed)
         violent_crime = 0.3
         overall_crime = 2.0
-        transit_distance = 5000.0  
+        transit_distance = transit_data['transit_distance']
 
         # Call recommendation function
         recommendations = recommend(

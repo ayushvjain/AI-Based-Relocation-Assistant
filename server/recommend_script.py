@@ -56,12 +56,14 @@ def scale(data, input_value):
     return scaled_data, scaled_input
 
 def recommend(data, location, rent, violent, overall, bed, bath, transit_distance, scaling_factors=[1, 1, 1]):
+    rentScale, distanceScale, safetyScale = scaling_factors
+
     data_rent = data['Rent']
     rooms = data['Bed'] + data['Bath'] * 0.5
     data_rent /= rooms
     rent /= (bed + bath * 0.5)
 
-    rent_tradeoff = np.exp(((data_rent - rent) / np.average(data_rent)) * 2)
+    rent_tradeoff = np.exp(((data_rent - rent) / np.average(data_rent)) * rentScale)
 
     data['rentTradeoff'] = rent_tradeoff
     data['newRent'] = data_rent
@@ -75,7 +77,7 @@ def recommend(data, location, rent, violent, overall, bed, bath, transit_distanc
     else:
         return data.head(0)  # Return empty if location is invalid
 
-    distance_tradeoff = np.exp(((data_transit_distance - transit_distance) / np.average(data_transit_distance)))
+    distance_tradeoff = np.exp(((data_transit_distance - transit_distance) / np.average(data_transit_distance)) * distanceScale)
 
     data['distanceTradeoff'] = distance_tradeoff
     data_tradeoff = rent_tradeoff + distance_tradeoff
@@ -98,19 +100,28 @@ def recommend(data, location, rent, violent, overall, bed, bath, transit_distanc
 
     apartment_vectors = np.array(list(zip(scaled_data_transit, scaled_data_rent, data_tradeoff)))
 
-    correlations = []
+    if False:
+        # Case where safety is first priority
+        # apartment_vectors = np.array(list(zip(scaledDataTransit, scaledDataRent, dataTradeoff, dataScaledCrime)))
+
+        # Case where rent is second priority
+        dataScaledCrime = [0 if val <= 1 else val for val in dataScaledCrime]
+        apartment_vectors = np.array(list(zip(scaledDataTransit, scaledDataRent, dataTradeoff, dataScaledCrime)))
+        
+        input = np.array([scaledTransit, scaledRent, tradeoff, 1])
+
+    similarities = []
 
     for vector in apartment_vectors:
         vector = np.array(vector)  # Ensure vector is NumPy array
         diff = input_vector - vector
-
-        scaled_diff = diff * scaling_factors  # Apply preference scaling
-        distance = np.linalg.norm(scaled_diff)
-        correlation = 1 / (1 + distance)
-        correlations.append((correlation, distance))
+        
+        distance = np.linalg.norm(diff)
+        similarity = 1 / (1 + distance)
+        similarities.append(similarity)
 
     # ✅ Fix: Extract only correlation values
-    data['similarity'] = [c[0] for c in correlations]
+    data['similarity'] = similarities
     data['dataTradeoff'] = data_tradeoff
 
     return data.sort_values(by='similarity', ascending=False)
