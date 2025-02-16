@@ -428,7 +428,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
               style={{
                 width: 80,
                 height: 80,
-                // borderRadius: '50%',
+                borderRadius: '50%',
                 overflow: 'hidden',
                 // border: '1.5px solid #09295c',
                 background: '#007bff',
@@ -454,13 +454,13 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
               animate={iconHovered ? 'still' : 'bounce'}
               style={{
                 position: 'absolute',
-                bottom: -10,
-                left: '19%',
+                bottom: -15,
+                left: '15%',
                 transform: 'translateX(-50%)',
-                width: 50,
-                height: 16,
+                width: 60,
+                height: 20,
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                borderRadius: '100%',
+                borderRadius: '50%',
                 filter: 'blur(2px)',
               }}
             />
@@ -486,6 +486,7 @@ const FloatingChatbot = forwardRef<FloatingChatbotHandle, FloatingChatbotProps>(
                 maxHeight: '70vh',
                 background: '#fff',
                 borderRadius: 8,
+                // boxShadow: '0 2px 10px rgba(0,0,0,0.2)',
                 display: 'flex',
                 flexDirection: 'column',
                 overflow: 'hidden',
