@@ -4,34 +4,7 @@ Fenway,132 Hemenway Unit 10,3200,0.2866,1.86,2.0,1.0,76.0,76.0,3703.0,1371.0,842
 Fenway,238 Hemenway Unit 11,4850,0.2866,1.86,3.0,1.0,170.0,170.0,3390.0,1798.0,11478.0,7729.0,0,1.7,5.8
 Fenway,238 Hemenway Unit b5,3195,0.2866,1.86,2.0,1.0,170.0,170.0,3390.0,1798.0,11478.0,7729.0,0,1.7,5.8
 Fenway,238 Hemenway Unit B8,3395,0.2866,1.86,2.0,1.0,170.0,170.0,3390.0,1798.0,11478.0,7729.0,0,1.7,5.8
-Fenway,315 Huntington Unit 2B,3100,0.2866,1.86,2.0,1.0,,,,,,,,,
-Fenway,409 Huntington Unit 28,3300,0.2866,1.86,2.0,1.0,,,,,,,,,
-Fenway,64 Louis Prang Unit 1,4950,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,64 Louis Prang Unit 3,6600,0.2866,1.86,4.0,1.0,,,,,,,,,
-Fenway,149 Park dr Unit 22,3250,0.2866,1.86,2.0,1.0,,,,,,,,,
-Fenway,447 Park Unit 1A,4800,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,447 Park Unit 2A,4800,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,463 Park Unit B,4500,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,463 Park Unit 15,3200,0.2866,1.86,2.0,1.0,,,,,,,,,
-Fenway,463 Park Unit 21,4200,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,58 Queensberry Unit 16,3700,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,58 Queensberry Unit 21,3750,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,97 St Stephen Unit 9,3300,0.2866,1.86,2.0,1.0,,,,,,,,,
-Fenway,115 St Stephen Unit 51,3300,0.2866,1.86,2.0,1.0,,,,,,,,,
-Fenway,45 Westland Unit 2,2800,0.2866,1.86,1.0,1.0,,,,,,,,,
-Fenway,45 Westland Unit 6,4450,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,45 Westland Unit 16,4550,0.2866,1.86,3.0,1.0,,,,,,,,,
-Fenway,45 Westland Unit 19,4500,0.2866,1.86,3.0,1.0,,,,,,,,,
 Brookline,1061 Beacon st  Unit B,4800,0.01,0.25,3.0,2.0,3334.0,2008.0,504.0,1168.0,5281.0,5377.0,1.7,0,2.4
-Brookline,131 Brook  Unit 2,4800,0.01,0.25,5.0,2.0,,,,,,,,,
-Brookline,241 Freeman Unit 5,4950,0.01,0.25,,,,,,,,,,,
-Brookline,312 Tappan Unit 1A,3175,0.01,0.25,2.0,1.0,,,,,,,,,
-Brookline,13 Perry Unit 1,2800,0.01,0.25,2.0,1.0,,,,,,,,,
-Mission hill,822 Huntington Unit 3,4000,,,4.0,1.0,,,,,,,,,
-Mission hill,822 Huntington Unit 4,3600,,,3.0,1.0,,,,,,,,,
-Mission hill,838 Huntington Unit 1,3500,,,2.0,1.0,,,,,,,,,
-Mission hill,840 Huntington Unit 1,3500,,,2.0,1.0,,,,,,,,,
-Mission hill,882 Huntington Unit 1,4480,,,3.0,1.0,,,,,,,,,
 Mission hill,226 Parker Hill Ave Unit 1,3600,,,2.0,1.0,2652.0,1632.0,6111.0,3742.0,8515.0,6942.0,1.7,4.1,4.1
 Mission hill,226 Parker Hill Ave Unit 4,3600,,,2.0,1.0,2652.0,1632.0,6111.0,3742.0,8515.0,6942.0,1.7,4.1,4.1
 Mission hill,226 Parker Hill Ave Unit 5,3600,,,2.0,1.0,2652.0,1632.0,6111.0,3742.0,8515.0,6942.0,1.7,4.1,4.1
@@ -40,71 +13,18 @@ Mission hill,226 Parker Hill Ave Unit 8,3600,,,2.0,1.0,2652.0,1632.0,6111.0,3742
 Mission hill,226 Parker Hill Ave Unit 10,3500,,,2.0,1.0,2652.0,1632.0,6111.0,3742.0,8515.0,6942.0,1.7,4.1,4.1
 Mission hill,226 Parker Hill Ave Unit 11,3500,,,2.0,1.0,2652.0,1632.0,6111.0,3742.0,8515.0,6942.0,1.7,4.1,4.1
 Mission hill,226 Parker Hill Ave Unit 16,3500,,,2.0,1.0,2652.0,1632.0,6111.0,3742.0,8515.0,6942.0,1.7,4.1,4.1
-Mission hill,30 S Huntington Unit 1,3300,,,2.0,1.0,,,,,,,,,
-Mission hill,30 S Huntington Unit 2,4350,,,3.0,1.0,,,,,,,,,
-Mission hill,30 S Huntington Unit 3,4200,,,3.0,1.0,,,,,,,,,
-Mission hill,71 S Huntington Unit 1,3800,,,3.0,1.0,,,,,,,,,
-Mission hill,71 S Huntington Unit 1,5000,,,4.0,1.0,,,,,,,,,
-AllstonBrighton,53 Ashford  Unit 3,2700,,,2.0,1.0,,,,,,,,,
 AllstonBrighton,153 Brighton ave Unit 10,2600,,,2.0,1.0,6503.0,5522.0,1301.0,1463.0,4267.0,3893.0,4.1,1.7,2.4
-AllstonBrighton,11 Barrows  Unit 3,2200,,,1.0,1.0,,,,,,,,,
-AllstonBrighton,251 Cambridge  Unit 3,4650,,,4.0,1.0,,,,,,,,,
-AllstonBrighton,1131 Commonwealth Unit 4,3300,,,,,,,,,,,,,
-AllstonBrighton,1687 Commonwealth Unit 18,2725,,,2.0,1.0,,,,,,,,,
-AllstonBrighton,1789 Commonwealth Unit 3,4000,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,17 Cummings Unit 2,3500,,,4.0,1.0,,,,,,,,,
-AllstonBrighton,17 Cummings Unit 4,3700,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,17 Cummings Unit 6,3750,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,23 Cummings Unit 6,3750,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,29 Cummings Unit 4,3700,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,29 Cummings Unit 5,3750,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,29 Cummings Unit 6,3700,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,23 Egremont Unit 4,3650,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,27 Egremont Unit A,3100,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,27 Egremont Unit 3,3650,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,27 Egremont Unit 4,3650,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,27 Egremont Unit 5,3700,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,33 Egremont Unit B,3200,,,3.0,2.0,,,,,,,,,
-AllstonBrighton,37 Egremont Unit 3,4400,,,5.0,2.0,,,,,,,,,
-AllstonBrighton,37 Egremont Unit 5,4400,,,5.0,2.0,,,,,,,,,
-AllstonBrighton,41 Egremont Unit 4,4400,,,5.0,2.0,,,,,,,,,
-AllstonBrighton,41 Egremont Unit 6,3950,,,4.0,2.0,,,,,,,,,
-AllstonBrighton,75 Gardner Unit 7B,2400,,,1.0,1.0,,,,,,,,,
-AllstonBrighton,75 Gardner Unit 8B,2600,,,2.0,1.0,,,,,,,,,
 AllstonBrighton,146 North Beacon Unit B2,3200,,,,,7870.0,8763.0,2772.0,2394.0,3449.0,3163.0,3.4,1.7,4.1
 AllstonBrighton,47 Orkney Rd Unit 2,5000,,,5.0,2.0,6234.0,5402.0,5038.0,4061.0,1794.0,1886.0,5.1,3.4,2.4
 AllstonBrighton,47 Orkney Rd Unit 3,5000,,,5.0,2.0,6240.0,5395.0,5044.0,4054.0,1800.0,1879.0,5.1,3.4,2.4
 AllstonBrighton,15 Scottfield Unit 16,3000,,,3.0,1.0,1209070.0,908523.0,1212499.0,905231.0,1215463.0,901260.0,0,0,0
-AllstonBrighton,123 Sutherland Unit B,2995,,,2.0,1.0,,,,,,,,,
-AllstonBrighton,131 Washington Unit 42,2300,,,1.0,1.0,,,,,,,,,
-Jamaica Plain,279 Lamartine Unit 1,5875,0.03,0.28,4.0,2.0,,,,,,,,,
-Jamaica Plain,314 Centre Unit 4,3200,0.03,0.28,3.0,1.0,,,,,,,,,
-Jamaica Plain,314 Centre Unit 2,4000,0.03,0.28,3.0,1.0,,,,,,,,,
-Jamaica Plain,314 Centre Unit 3,4400,0.03,0.28,4.0,2.0,,,,,,,,,
-Jamaica Plain,8 Buckley Unit 1,3300,0.03,0.28,3.0,1.0,,,,,,,,,
-Jamaica Plain,23 Evergreen Unit 2,4300,0.03,0.28,4.0,2.0,,,,,,,,,
-Jamaica Plain,2 Mark st Unit 1,4060,0.03,0.28,3.0,2.0,,,,,,,,,
-Jamaica Plain,3 Mark st Unit 2,4690,0.03,0.28,4.0,2.0,,,,,,,,,
 Jamaica Plain,3147-3149 Washington st Unit 2,4100,0.03,0.28,4.0,1.0,4425.0,2895.0,9557.0,5470.0,16613.0,7718.0,1.7,3.4,5.8
-Roxbury,65 Burrell Unit 3,3600,0.38,0.07,3.0,2.0,,,,,,,,,
-Roxbury,21 Alpine Unit 2,4850,0.38,0.07,4.0,2.0,,,,,,,,,
-Roxbury,129 Cedar St Unit 1,4100,0.38,0.07,4.0,2.0,,,,,,,,,
-Roxbury,93 George Unit 1,2950,0.38,0.07,2.0,1.0,,,,,,,,,
-Roxbury,93 George Unit 3,3295,0.38,0.07,3.0,1.0,,,,,,,,,
 Roxbury,190 Highland St Unit 1,3300,0.38,0.07,3.0,1.0,72500.0,63246.0,75914.0,69459.0,83144.0,70061.0,0,0,0
 Roxbury,2969 Washington Unit B,2850,0.38,0.07,1.0,1.0,,4784442.0,,4781150.0,,4777179.0,,,
 Roxbury,2971 Washington Unit A,2995,0.38,0.07,2.0,1.0,,4784442.0,,4781150.0,,4777179.0,,,
 Roxbury,2973 Washington Unit 1,3025,0.38,0.07,2.0,1.0,,4784442.0,,4781150.0,,4777179.0,,,
 Roxbury,2975 Washington Unit 2,3750,0.38,0.07,3.0,2.0,,4784442.0,,4781150.0,,4777179.0,,,
-Medford,124 Bonner Unit 2,4225,,,4.0,2.0,,,,,,,,,
-Medford,313 Cambridge Unit 1,3995,,,4.0,1.0,,,,,,,,,
-Medford,313 Cambridge Unit 2,4445,,,4.0,1.0,,,,,,,,,
-Medford,74 Gore Unit 3,3445,,,3.0,1.0,,,,,,,,,
-Medford,58 Medford Unit 3,3195,,,3.0,1.0,,,,,,,,,
 Medford,585 Somerville Unit A-1,4355,,,4.0,2.0,15428.0,7714.0,6922.0,7198.0,18016.0,11248.0,4.1,4.1,2.4
-Medford,68 Winchester Unit 2,4595,,,,,,,,,,,,,
-DowntownSouth End,81 Essex Unit 36,2600,,,1.0,1.0,,,,,,,,,
-DowntownSouth End,81 Essex Unit 22,3595,,,2.0,1.0,,,,,,,,,
 DowntownSouth End,601 Albany st  Unit 506,3400,,,1.0,1.0,2032.0,2041.0,6993.0,8407.0,13113.0,16942.0,1.7,1.7,4.1
 DowntownSouth End,601 Albany st  Unit 607,4200,,,,,2032.0,2041.0,6993.0,8407.0,13113.0,16942.0,1.7,1.7,4.1
 Jamaica Plain,63 Mozart St. #R Jamaica Plain,3100,0.0,0.0,3.0,2.0,4743.0,2671.0,8342.0,4745.0,10849.0,7155.0,1.7,4.1,5.8
@@ -152,7 +72,6 @@ Roxbury,150 Camden St. #150 - 506 Roxbury,3200,0.0,0.0,1.0,1.0,134.0,618.0,3541.
 Back Bay,290 Commonwealth Ave. #24 Back Bay,1875,0.0,0.0,,1.0,1795.0,1933.0,2420.0,1483.0,7998.0,13087.0,1.7,2.4,2.4
 Back Bay,1 Charles St. South #214 Back Bay,3850,0.0,0.0,1.0,1.0,2706.0,3719.0,3986.0,3203.0,9521.0,14790.0,1.7,4.1,2.4
 Back Bay,122 Beacon St. #1 Back Bay,3100,0.0,0.0,,1.0,2730.0,2730.0,4099.0,2214.0,9634.0,12890.0,1.7,2.4,2.4
-Brighton,63 Sutherland #B-2 Brighton,1700,0.0,0.0,1.0,1.0,,,,,,,,,
 Hyde Park,35 Williams Ave. #1 Hyde Park,2750,0.0,0.0,2.0,1.0,13424.0,11854.0,23389.0,15266.0,27239.0,13545.0,3.4,5.1,4.1
 Jamaica Plain,112 Amory St. #1 Jamaica Plain,2000,0.0,0.0,1.0,1.0,3464.0,2376.0,6864.0,5284.0,10628.0,7694.0,1.7,3.4,5.8
 Dorchester,85 Pierce Ave. #2 Dorchester,2800,0.0,0.0,2.0,1.0,10837.0,9227.0,14237.0,15440.0,18347.0,14738.0,3.4,4.1,7.5
@@ -199,7 +118,6 @@ Brighton,1462 Commonwealth Ave. #2 Brighton,3800,0.0,0.0,3.0,2.0,5320.0,4732.0,2
 Brighton,530 Western Ave. #513 Brighton,4284,0.0,0.0,2.0,2.0,9483.0,7842.0,5234.0,6348.0,4694.0,4402.0,3.4,3.4,4.1
 Brighton,1550 Soldiers Field Rd. #230 Brighton,2592,0.0,0.0,1.0,1.0,7895.0,8280.0,5568.0,6786.0,5028.0,3708.0,3.4,3.4,4.1
 Brighton,34 Perthshire #34 Brighton,7000,0.0,0.0,6.0,3.0,12108.0,10151.0,8876.0,4276.0,2549.0,2861.0,3.4,3.4,1.7
-Brighton,12 Waverly #3 Brighton,3100,0.0,0.0,3.0,1.5,,,,,,,,,
 Brighton,11 Camelot Ct. #11-3I Brighton,4147,0.0,0.0,3.0,1.0,5479.0,6322.0,2259.0,2248.0,3324.0,3493.0,2.4,2.4,2.4
 Brighton,1419 Commonwealth Ave. #204 Brighton,3700,0.0,0.0,3.0,2.0,5167.0,6595.0,1947.0,2521.0,3494.0,2964.0,2.4,2.4,2.4
 Brighton,122A Englewood Ave. #3 Brighton,2250,0.0,0.0,1.0,1.0,7106.0,5707.0,4967.0,3959.0,1626.0,1409.0,5.1,3.4,2.4
