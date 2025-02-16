@@ -196,7 +196,7 @@ const Services: React.FC = () => {
             {/* Info Section */}
             <Container sx={{ py: 6, textAlign: 'start', maxWidth: '100vw !important' }}>
                 <Grid container spacing={4} justifyContent='space-evenly'>
-                    <Grid item xs={12} md={4} display='flex' flexDirection='column' justifyContent='center'>
+                    {/* <Grid item xs={12} md={4} display='flex' flexDirection='column' justifyContent='center'>
                         <Typography variant="h4" sx={{ fontSize: '13px', fontWeight: "bold", color: '#46a225', mb: 2, textTransform: "uppercase", }}>
                             {t('Landing.Info.SubText')}
                         </Typography>
@@ -206,7 +206,7 @@ const Services: React.FC = () => {
                         <Typography variant="body1" sx={{ mb: 3 }}>
                             {t('Landing.Info.Description')}
                         </Typography>
-                    </Grid>
+                    </Grid> */}
                     {/* <Grid item xs={12} md={5}>
                         <Card>
                             <CardContent sx={{
@@ -232,7 +232,7 @@ const Services: React.FC = () => {
                     </Grid> */}
                 </Grid>
             </Container>
-            <Container sx={{ pt: 6, backgroundColor: '#eff1f0', maxWidth: '100vw !important', textAlign: 'start' }}>
+            <Container sx={{ maxWidth: '100vw !important', textAlign: 'start' }}>
                 {/* <Grid container spacing={4} padding="0px 20px">
                     <Grid item xs={12} display='flex' flexDirection='column' justifyContent='center' >
                         <Typography variant="h4" sx={{ fontSize: '13px', fontWeight: "bold", color: '#46a225', mb: 2, textTransform: "uppercase", }}>

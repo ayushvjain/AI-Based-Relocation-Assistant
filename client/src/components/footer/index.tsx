@@ -91,7 +91,7 @@ const Footer: React.FC = () => {
                             /> */}
                         </Box>
                         <Typography variant="h6" sx={{ fontWeight: "bold", marginBottom: "8px" }}>
-                            Fix Finder
+                            Product name TBD
                         </Typography>
                         <Typography variant="body2" sx={{ textAlign: "center" }}>
                             {t('footer.tagLine')}
@@ -292,7 +292,7 @@ const Footer: React.FC = () => {
                 }}
             >
                 <Typography variant="body2" sx={{ textAlign: "center", flexGrow: 1 }}>
-                    © 2024 FixFinder Inc.
+                    © 2024 Product Name TBD
                 </Typography>
                 <Box
                     sx={{
