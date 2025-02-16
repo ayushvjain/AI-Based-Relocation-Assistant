@@ -1,19 +1,32 @@
 import React, { useState, useEffect } from 'react';
-import { AppBar, Box, Toolbar, IconButton, Typography, Button, Menu, MenuItem, Avatar, Container } from '@mui/material';
+import {
+  AppBar,
+  Box,
+  Toolbar,
+  IconButton,
+  Typography,
+  Button,
+  Menu,
+  MenuItem,
+  Avatar,
+  Container,
+} from '@mui/material';
 import Tooltip from '@mui/material/Tooltip';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../../utils/languageSwitcher.tsx';
-// import appLogo from '../../assets/logo.png';
 import routes from '../../constants/routes.json';
 import FullscreenIcon from '@mui/icons-material/Fullscreen';
 import FullscreenExitIcon from '@mui/icons-material/FullscreenExit';
 
-
 const settings = ['Profile', 'Logout'];
 
-function ResponsiveAppBar() {
+interface ResponsiveAppBarProps {
+  onHelpClick?: () => void;
+}
+
+function ResponsiveAppBar({ onHelpClick }: ResponsiveAppBarProps) {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
   const [anchorElUser, setAnchorElUser] = useState<null | HTMLElement>(null);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -29,6 +42,7 @@ function ResponsiveAppBar() {
       document.removeEventListener('fullscreenchange', handleFullscreenChange);
     };
   }, []);
+
   const toggleFullscreen = async () => {
     try {
       if (isFullscreen) {
@@ -42,7 +56,6 @@ function ResponsiveAppBar() {
   };
 
   const { t } = useTranslation();
-  // Retrieve user info from sessionStorage/localStorage
   const firstname = sessionStorage.getItem('firstName') || 'User';
   const lastname = sessionStorage.getItem('lastName') || '';
   const role = sessionStorage.getItem('role') || '';
@@ -53,12 +66,6 @@ function ResponsiveAppBar() {
     { name: t('Profile'), route: routes.PROFILE },
   ];
 
-  // const pagesServiceProvider = [
-  //   // { name: t('Dashboard'), route: routes.SERVICE_PROVIDER_DASHBOARD },
-  //   // { name: t('Profile'), route: routes.PROFILE },
-  // ];
-
-  // Generate initials from firstname and lastname
   const userInitials = `${firstname[0] || ''}${lastname[0] || ''}`.toUpperCase();
 
   const handleOpenNavMenu = (event: React.MouseEvent<HTMLElement>) => {
@@ -87,10 +94,10 @@ function ResponsiveAppBar() {
     navigate(routes.LOGIN, { replace: true });
   };
 
-  const navigateHome=()=>{
-    if(role?.toLowerCase()==='customer'){
+  const navigateHome = () => {
+    if (role.toLowerCase() === 'customer') {
       navigate(routes.CUSTOMER_HOME);
-    }else{
+    } else {
       navigate(routes.SERVICE_PROVIDER_DASHBOARD);
     }
   };
@@ -105,35 +112,17 @@ function ResponsiveAppBar() {
         <Toolbar disableGutters>
           {/* Logo */}
           <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', mr: 2, cursor: 'pointer' }} onClick={() => navigateHome()}>
-            {/* <img
-              src={appLogo}
-              alt="App Logo"
-              style={{ height: '70px', cursor: 'pointer' }}
-
-            /> */}
+            {/* Logo image here */}
           </Box>
-
           {/* Desktop Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}></Box>
-
           {/* Mobile Menu */}
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="navigation menu"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
+            <IconButton size="large" aria-label="navigation menu" aria-controls="menu-appbar" aria-haspopup="true" onClick={handleOpenNavMenu} color="inherit">
               <MenuIcon />
             </IconButton>
             <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', mr: 2, cursor: 'pointer' }} onClick={() => navigate(routes.CUSTOMER_HOME)}>
-              {/* <img
-                src={appLogo}
-                alt="App Logo"
-                style={{ height: '70px', cursor: 'pointer' }}
-              /> */}
+              {/* Mobile Logo image */}
             </Box>
             <Menu
               id="menu-appbar"
@@ -171,51 +160,29 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
-
           {/* Fullscreen Toggle */}
-          <Tooltip title={isFullscreen?"Restore Down":"Maximize"} placement="bottom">
+          <Tooltip title={isFullscreen ? "Restore Down" : "Maximize"} placement="bottom">
             <IconButton sx={{ padding: 0 }} color="inherit" onClick={toggleFullscreen}>
               {isFullscreen ? <FullscreenExitIcon /> : <FullscreenIcon />}
             </IconButton>
           </Tooltip>
           {/* Language Switcher */}
           <LanguageSwitcher />
-
+          {/* Help Button to re-open the chatbot */}
+          {onHelpClick && (
+            <Button color="inherit" onClick={onHelpClick}>
+              Help
+            </Button>
+          )}
           {/* User Profile */}
           <Box sx={{ flexGrow: 0, marginLeft: '20px' }}>
             <Tooltip title={`${firstname} ${lastname}`}>
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar sx={{ size: '35px' }} alt={`${firstname} ${lastname}`}>{userInitials}</Avatar>
+                <Avatar sx={{ width: 35, height: 35 }} alt={`${firstname} ${lastname}`}>
+                  {userInitials}
+                </Avatar>
               </IconButton>
             </Tooltip>
-            {/* <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) =>
-                setting === 'Logout' ? (
-                  <MenuItem key={setting} onClick={handleLogout}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                ) : (
-                  <MenuItem key={setting} onClick={handleOnProfileClick}>
-                    <Typography textAlign="center">{setting}</Typography>
-                  </MenuItem>
-                )
-              )}
-            </Menu> */}
           </Box>
         </Toolbar>
       </Container>
