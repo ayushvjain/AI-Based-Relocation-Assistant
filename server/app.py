@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 import csv
 import os
+import math
 
 app = Flask(__name__)
 
@@ -31,13 +32,15 @@ def get_data():
     # Slice the data to return only the relevant items
     paginated_data = data[start_index:end_index]
 
+    total_pages = math.ceil(len(data)/count_per_page) # total pages
     # Prepare the response format
     response = {
         'items': paginated_data,
         'metadata': {
             'total_data': len(data),
             'current_page': page_number,
-            'count': count_per_page
+            'count': count_per_page,
+            'total_pages': total_pages
         }
     }
 
