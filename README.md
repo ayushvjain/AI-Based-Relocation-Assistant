@@ -38,7 +38,7 @@ cd AI-Based-Relocation-Assistant
 #### 3. Run the client app
 ```
 cd ../client
-npm install
+npm start
 ```
 #### 4. Run the server app
 ```
